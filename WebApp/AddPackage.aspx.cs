@@ -23,7 +23,8 @@ namespace WebApp
                 pk_Package_weight = double.Parse(txtPackageWeight.Text),
                 pk_Sender_address = txtSenderAddress.Text,
                 pk_Receiver_address = txtReceiverAddress.Text,
-                pk_package_type = ddlPackageType.Text
+                pk_package_type = ddlPackageType.Text,
+                pk_Customer_id = int.Parse(Session["umId"].ToString())
             };
             if (BAL.UserOperations.AddPackage(_package))
             {

@@ -33,15 +33,15 @@ namespace DAL
     partial void InsertCts_BranchMaster(Cts_BranchMaster instance);
     partial void UpdateCts_BranchMaster(Cts_BranchMaster instance);
     partial void DeleteCts_BranchMaster(Cts_BranchMaster instance);
+    partial void InsertRoleMaster(RoleMaster instance);
+    partial void UpdateRoleMaster(RoleMaster instance);
+    partial void DeleteRoleMaster(RoleMaster instance);
     partial void InsertCts_Package(Cts_Package instance);
     partial void UpdateCts_Package(Cts_Package instance);
     partial void DeleteCts_Package(Cts_Package instance);
     partial void InsertCts_User_Master(Cts_User_Master instance);
     partial void UpdateCts_User_Master(Cts_User_Master instance);
     partial void DeleteCts_User_Master(Cts_User_Master instance);
-    partial void InsertRoleMaster(RoleMaster instance);
-    partial void UpdateRoleMaster(RoleMaster instance);
-    partial void DeleteRoleMaster(RoleMaster instance);
     #endregion
 		
 		public DBContextDataContext() : 
@@ -82,6 +82,14 @@ namespace DAL
 			}
 		}
 		
+		public System.Data.Linq.Table<RoleMaster> RoleMasters
+		{
+			get
+			{
+				return this.GetTable<RoleMaster>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Cts_Package> Cts_Packages
 		{
 			get
@@ -95,14 +103,6 @@ namespace DAL
 			get
 			{
 				return this.GetTable<Cts_User_Master>();
-			}
-		}
-		
-		public System.Data.Linq.Table<RoleMaster> RoleMasters
-		{
-			get
-			{
-				return this.GetTable<RoleMaster>();
 			}
 		}
 	}
@@ -214,6 +214,192 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RoleMaster")]
+	public partial class RoleMaster : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _RoleID;
+		
+		private string _RoleDescription;
+		
+		private System.Nullable<System.DateTime> _CreatedOn;
+		
+		private string _CreatedBy;
+		
+		private System.Nullable<bool> _IsActive;
+		
+		private EntitySet<Cts_User_Master> _Cts_User_Masters;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRoleIDChanging(int value);
+    partial void OnRoleIDChanged();
+    partial void OnRoleDescriptionChanging(string value);
+    partial void OnRoleDescriptionChanged();
+    partial void OnCreatedOnChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedOnChanged();
+    partial void OnCreatedByChanging(string value);
+    partial void OnCreatedByChanged();
+    partial void OnIsActiveChanging(System.Nullable<bool> value);
+    partial void OnIsActiveChanged();
+    #endregion
+		
+		public RoleMaster()
+		{
+			this._Cts_User_Masters = new EntitySet<Cts_User_Master>(new Action<Cts_User_Master>(this.attach_Cts_User_Masters), new Action<Cts_User_Master>(this.detach_Cts_User_Masters));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int RoleID
+		{
+			get
+			{
+				return this._RoleID;
+			}
+			set
+			{
+				if ((this._RoleID != value))
+				{
+					this.OnRoleIDChanging(value);
+					this.SendPropertyChanging();
+					this._RoleID = value;
+					this.SendPropertyChanged("RoleID");
+					this.OnRoleIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleDescription", DbType="VarChar(50)")]
+		public string RoleDescription
+		{
+			get
+			{
+				return this._RoleDescription;
+			}
+			set
+			{
+				if ((this._RoleDescription != value))
+				{
+					this.OnRoleDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._RoleDescription = value;
+					this.SendPropertyChanged("RoleDescription");
+					this.OnRoleDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedOn
+		{
+			get
+			{
+				return this._CreatedOn;
+			}
+			set
+			{
+				if ((this._CreatedOn != value))
+				{
+					this.OnCreatedOnChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedOn = value;
+					this.SendPropertyChanged("CreatedOn");
+					this.OnCreatedOnChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="VarChar(50)")]
+		public string CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					this.OnCreatedByChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedBy = value;
+					this.SendPropertyChanged("CreatedBy");
+					this.OnCreatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsActive", DbType="Bit")]
+		public System.Nullable<bool> IsActive
+		{
+			get
+			{
+				return this._IsActive;
+			}
+			set
+			{
+				if ((this._IsActive != value))
+				{
+					this.OnIsActiveChanging(value);
+					this.SendPropertyChanging();
+					this._IsActive = value;
+					this.SendPropertyChanged("IsActive");
+					this.OnIsActiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoleMaster_Cts_User_Master", Storage="_Cts_User_Masters", ThisKey="RoleID", OtherKey="um_RoleId")]
+		public EntitySet<Cts_User_Master> Cts_User_Masters
+		{
+			get
+			{
+				return this._Cts_User_Masters;
+			}
+			set
+			{
+				this._Cts_User_Masters.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Cts_User_Masters(Cts_User_Master entity)
+		{
+			this.SendPropertyChanging();
+			entity.RoleMaster = this;
+		}
+		
+		private void detach_Cts_User_Masters(Cts_User_Master entity)
+		{
+			this.SendPropertyChanging();
+			entity.RoleMaster = null;
 		}
 	}
 	
@@ -608,8 +794,6 @@ namespace DAL
 		
 		private System.Nullable<bool> _um_isActive;
 		
-		private System.Nullable<int> _um_emp_id;
-		
 		private System.Nullable<long> _um_Salary;
 		
 		private string _um_Designation;
@@ -627,6 +811,8 @@ namespace DAL
 		private string _um_IsApprovedBy;
 		
 		private System.Nullable<int> _um_RoleId;
+		
+		private string _um_emp_cid;
 		
 		private EntitySet<Cts_Package> _Cts_Packages;
 		
@@ -654,8 +840,6 @@ namespace DAL
     partial void Onum_emailIdChanged();
     partial void Onum_isActiveChanging(System.Nullable<bool> value);
     partial void Onum_isActiveChanged();
-    partial void Onum_emp_idChanging(System.Nullable<int> value);
-    partial void Onum_emp_idChanged();
     partial void Onum_SalaryChanging(System.Nullable<long> value);
     partial void Onum_SalaryChanged();
     partial void Onum_DesignationChanging(string value);
@@ -674,6 +858,8 @@ namespace DAL
     partial void Onum_IsApprovedByChanged();
     partial void Onum_RoleIdChanging(System.Nullable<int> value);
     partial void Onum_RoleIdChanged();
+    partial void Onum_emp_cidChanging(string value);
+    partial void Onum_emp_cidChanged();
     #endregion
 		
 		public Cts_User_Master()
@@ -863,26 +1049,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_um_emp_id", DbType="Int")]
-		public System.Nullable<int> um_emp_id
-		{
-			get
-			{
-				return this._um_emp_id;
-			}
-			set
-			{
-				if ((this._um_emp_id != value))
-				{
-					this.Onum_emp_idChanging(value);
-					this.SendPropertyChanging();
-					this._um_emp_id = value;
-					this.SendPropertyChanged("um_emp_id");
-					this.Onum_emp_idChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_um_Salary", DbType="BigInt")]
 		public System.Nullable<long> um_Salary
 		{
@@ -1067,6 +1233,26 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_um_emp_cid", AutoSync=AutoSync.Always, DbType="VarChar(37)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string um_emp_cid
+		{
+			get
+			{
+				return this._um_emp_cid;
+			}
+			set
+			{
+				if ((this._um_emp_cid != value))
+				{
+					this.Onum_emp_cidChanging(value);
+					this.SendPropertyChanging();
+					this._um_emp_cid = value;
+					this.SendPropertyChanged("um_emp_cid");
+					this.Onum_emp_cidChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cts_User_Master_Cts_Package", Storage="_Cts_Packages", ThisKey="um_id", OtherKey="pk_Customer_id")]
 		public EntitySet<Cts_Package> Cts_Packages
 		{
@@ -1144,192 +1330,6 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.Cts_User_Master = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RoleMaster")]
-	public partial class RoleMaster : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _RoleID;
-		
-		private string _RoleDescription;
-		
-		private System.Nullable<System.DateTime> _CreatedOn;
-		
-		private string _CreatedBy;
-		
-		private System.Nullable<bool> _IsActive;
-		
-		private EntitySet<Cts_User_Master> _Cts_User_Masters;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnRoleIDChanging(int value);
-    partial void OnRoleIDChanged();
-    partial void OnRoleDescriptionChanging(string value);
-    partial void OnRoleDescriptionChanged();
-    partial void OnCreatedOnChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreatedOnChanged();
-    partial void OnCreatedByChanging(string value);
-    partial void OnCreatedByChanged();
-    partial void OnIsActiveChanging(System.Nullable<bool> value);
-    partial void OnIsActiveChanged();
-    #endregion
-		
-		public RoleMaster()
-		{
-			this._Cts_User_Masters = new EntitySet<Cts_User_Master>(new Action<Cts_User_Master>(this.attach_Cts_User_Masters), new Action<Cts_User_Master>(this.detach_Cts_User_Masters));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int RoleID
-		{
-			get
-			{
-				return this._RoleID;
-			}
-			set
-			{
-				if ((this._RoleID != value))
-				{
-					this.OnRoleIDChanging(value);
-					this.SendPropertyChanging();
-					this._RoleID = value;
-					this.SendPropertyChanged("RoleID");
-					this.OnRoleIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleDescription", DbType="VarChar(50)")]
-		public string RoleDescription
-		{
-			get
-			{
-				return this._RoleDescription;
-			}
-			set
-			{
-				if ((this._RoleDescription != value))
-				{
-					this.OnRoleDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._RoleDescription = value;
-					this.SendPropertyChanged("RoleDescription");
-					this.OnRoleDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOn", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreatedOn
-		{
-			get
-			{
-				return this._CreatedOn;
-			}
-			set
-			{
-				if ((this._CreatedOn != value))
-				{
-					this.OnCreatedOnChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedOn = value;
-					this.SendPropertyChanged("CreatedOn");
-					this.OnCreatedOnChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="VarChar(50)")]
-		public string CreatedBy
-		{
-			get
-			{
-				return this._CreatedBy;
-			}
-			set
-			{
-				if ((this._CreatedBy != value))
-				{
-					this.OnCreatedByChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedBy = value;
-					this.SendPropertyChanged("CreatedBy");
-					this.OnCreatedByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsActive", DbType="Bit")]
-		public System.Nullable<bool> IsActive
-		{
-			get
-			{
-				return this._IsActive;
-			}
-			set
-			{
-				if ((this._IsActive != value))
-				{
-					this.OnIsActiveChanging(value);
-					this.SendPropertyChanging();
-					this._IsActive = value;
-					this.SendPropertyChanged("IsActive");
-					this.OnIsActiveChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoleMaster_Cts_User_Master", Storage="_Cts_User_Masters", ThisKey="RoleID", OtherKey="um_RoleId")]
-		public EntitySet<Cts_User_Master> Cts_User_Masters
-		{
-			get
-			{
-				return this._Cts_User_Masters;
-			}
-			set
-			{
-				this._Cts_User_Masters.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Cts_User_Masters(Cts_User_Master entity)
-		{
-			this.SendPropertyChanging();
-			entity.RoleMaster = this;
-		}
-		
-		private void detach_Cts_User_Masters(Cts_User_Master entity)
-		{
-			this.SendPropertyChanging();
-			entity.RoleMaster = null;
 		}
 	}
 }

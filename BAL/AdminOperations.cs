@@ -13,9 +13,15 @@ namespace BAL
         {
             return DAL.AdminOperations.GetPendingList();
         }
-        public static bool ApprovalUsers(int um_id, bool status)
+
+        public static bool ApprovalUsers(int um_id, bool status, string empId, string name, long salary)
         {
-            return DAL.AdminOperations.ApproveUsers(um_id, status);
+            return DAL.AdminOperations.ApproveUsers(um_id, status, empId, name, salary);
+        }
+
+        public static List<Cts_BranchMaster> GetWarehouse()
+        {
+            return DAL.AdminOperations.GetWarehouse();
         }
     }
 }

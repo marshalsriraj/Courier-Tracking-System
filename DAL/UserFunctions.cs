@@ -47,7 +47,7 @@ namespace DAL
             }
         }
 
-        public static bool ApprovePackage(int pk_id, bool status)
+        public static bool ApprovePackage(int pk_id, bool status, int role, string empId, int cost)
         {
             using (DBContextDataContext db = new DBContextDataContext())
             {
@@ -55,6 +55,9 @@ namespace DAL
                 {
                     var user = db.Cts_Packages.Where(x => x.pk_consignment_id == pk_id).FirstOrDefault();
                     user.pk_isActive = status;
+                    user.pk_Employee_id = empId;
+                    user.pk_Accept_Date = DateTime.Now.Date;
+                    user.pk_cost = cost;
                     db.SubmitChanges();
                     return true;
                 }

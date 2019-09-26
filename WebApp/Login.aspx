@@ -64,11 +64,11 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                <li class="nav-item" style="display:none;">
+                    <a class="nav-link" href="Login">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                    <a class="nav-link" href="Registration">Register</a>
                 </li>
             </ul>
 
@@ -87,7 +87,8 @@
                             <div class="form-group row">
                                 <label for="email_address" class="col-md-4 col-form-label text-md-right">Username</label>
                                 <div class="col-md-6">
-                                    <asp:TextBox runat="server" ID="txtUsername" class="form-control" placeholder="username" autofocus="autofocus"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtUsername" class="form-control" placeholder="User ID" 
+                                        autofocus="autofocus"></asp:TextBox>
                                     
                                 </div>
                             </div>
@@ -95,7 +96,8 @@
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                 <div class="col-md-6">
-                                    <asp:TextBox runat="server" ID="txtPassowrd" class="form-control" placeholder="password" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtPassowrd" class="form-control" placeholder="Password" 
+                                        TextMode="Password"></asp:TextBox>
                                    
                                 </div>
                             </div>
@@ -112,7 +114,7 @@
 
                             <div class="col-md-6 offset-md-4">
                                 <asp:Button runat="server" ID="btnLogin" Text="Login" class="btn btn-primary" OnClick="btnLogin_Click"/>
-                                <a href="#" class="btn btn-link">
+                                <a href="Registration" class="btn btn-link">
                                    New User ? click here to Signup
                                 </a>
                             </div>

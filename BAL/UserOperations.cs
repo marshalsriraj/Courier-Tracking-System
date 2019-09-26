@@ -19,9 +19,9 @@ namespace BAL
             return DAL.UserFunctions.GetPackageId();
         }
 
-        public static bool ApprovePackage(int pk_id, bool status)
+        public static bool ApprovePackage(int pk_id, bool status, int role, string empId, int cost)
         {
-            return DAL.UserFunctions.ApprovePackage(pk_id, status);
+            return DAL.UserFunctions.ApprovePackage(pk_id, status, role, empId, cost);
         }
     }
 }

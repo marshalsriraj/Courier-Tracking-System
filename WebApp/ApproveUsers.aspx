@@ -38,9 +38,15 @@
                         <asp:Label runat="server" ID="lblEmail" Text='<%#Eval("um_emailId") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
+
+                <asp:TemplateField HeaderText="Salary">
+                    <ItemTemplate>
+                        <asp:TextBox runat="server" ID="txtSalary"></asp:TextBox>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
                 <asp:ButtonField HeaderText="Approve" ButtonType="Image" ImageUrl="Images/ok.png" CommandName="approve"/>
-                <asp:ButtonField HeaderText="Reject" ButtonType="Image" ImageUrl="Images/delete.png" CommandName="reject"/>
-                
+                <asp:ButtonField HeaderText="Reject" ButtonType="Image" ImageUrl="Images/delete.png" CommandName="reject"/>                
                 </Columns>
         </asp:GridView>
     </div>

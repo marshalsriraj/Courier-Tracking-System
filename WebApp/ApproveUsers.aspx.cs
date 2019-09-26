@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace WebApp
 {
-    public partial class ApproveUsers : System.Web.UI.Page
+    public partial class ApproveUsers : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,10 +25,13 @@ namespace WebApp
         {
             GridViewRow row = gdvApprovalData.Rows[int.Parse(e.CommandArgument.ToString())];
             int um_Id = int.Parse((row.FindControl("lblId") as Label).Text);
-         
+            long salary = long.Parse((row.FindControl("txtSalary") as TextBox).Text);
+            string empId = Session["EmpId"].ToString();
+            string name = Session["Name"].ToString();
+
             if (e.CommandName == "approve")
             {
-               if( BAL.AdminOperations.ApprovalUsers(um_Id, true))
+               if (BAL.AdminOperations.ApprovalUsers(um_Id, true, empId, name, salary))
                 {
                     string _msg = string.Format("SuccessFunction('{0}')", "User Approved Successfully");
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
@@ -36,14 +39,14 @@ namespace WebApp
                 }
                 else
                 {
-                    string _msg = string.Format("SuccessFunction('{0}')", "User Rejected Successfully");
+                    string _msg = string.Format("ErrFunction('{0}')", "User Rejected");
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
 
                 }
             }
             else if(e.CommandName == "reject")
             {
-                if (BAL.AdminOperations.ApprovalUsers(um_Id, false))
+                if (BAL.AdminOperations.ApprovalUsers(um_Id, false, empId, name, salary))
                 {
                     string _msg = string.Format("SuccessFunction('{0}')", "User Approved Successfully");
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
@@ -51,7 +54,7 @@ namespace WebApp
                 }
                 else
                 {
-                    string _msg = string.Format("SuccessFunction('{0}')", "User Rejected Successfully");
+                    string _msg = string.Format("ErrFunction('{0}')", "User Rejected");
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
 
                 }                

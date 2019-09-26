@@ -35,17 +35,15 @@ namespace WebApp
                     Session["RoleID"] = user[0].um_RoleId.ToString();
                     Session["Email"] = user[0].um_emailId;
                     Session["Status"] = user[0].um_isActive;
+                    Session["EmpId"] = user[0].um_emp_cid;
+                    Session["umId"] = user[0].um_id;
                     Response.Redirect("Dashboard.aspx");
                 }
-
-
             }
             else
             {
                 string _msg = string.Format("ErrFunction('{0}')", "Incorrect UserId/Password");
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
-
-
             }
         }
     }
