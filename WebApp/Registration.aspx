@@ -28,7 +28,7 @@
         }
     </style>
 
-    <script src="Scripts/Script.js"></script>
+    <script type="text/javascript" src="Scripts/Script.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
         function ErrFunction(message) {
@@ -95,6 +95,7 @@
                         <div class="card-body">
                             <form runat="server" id="form1">
                                 <div><a class="small" href="#" onclick="return toggle()">Not User? Click Here</a></div>
+
                                 <div class="form-group row">
                                     <label for="txtUserFirstName" class="col-md-4 col-form-label text-md-right">First Name</label>
                                     <div class="col-md-6">

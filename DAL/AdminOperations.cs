@@ -8,11 +8,23 @@ namespace DAL
 {
     public class AdminOperations
     {
-        public static List<Cts_User_Master> GetPendingList()
+        public static List<Cts_User_Master> GetPendingList(int roleId)
         {
             using (DBContextDataContext db =new DBContextDataContext())
             {
-               return db.Cts_User_Masters.Where(x => x.um_isActive == null).ToList();
+                if (roleId == 1)
+                {
+                    return db.Cts_User_Masters.Where(x => x.um_isActive == null && x.um_RoleId == 2).ToList();
+                }
+                else if (roleId == 2)
+                {
+                    return db.Cts_User_Masters.Where(x => x.um_isActive == null && x.um_RoleId == 3 && x.um_RoleId == 4).ToList();
+                }
+                else
+                {
+                    return db.Cts_User_Masters.Where(x => x.um_isActive == null && x.um_RoleId == 4).ToList();
+                }
+               
             }
         }
 
@@ -37,11 +49,37 @@ namespace DAL
             }
         }
 
+        public static List<Cts_Package> PackageStatus()
+        {
+            using (DBContextDataContext db = new DBContextDataContext())
+            {
+                return db.Cts_Packages.Where(x => x.pk_Package_Status != "Delivered").ToList();
+            }
+        }
+
         public static List<Cts_BranchMaster> GetWarehouse()
         {
             using (DBContextDataContext db = new DBContextDataContext())
             {
                 return db.Cts_BranchMasters.Where(x => x.bm_branchName != null).ToList();
+            }
+        }
+
+        public static bool AddWarehouse(Cts_BranchMaster warehouse)
+        {
+            using (DBContextDataContext db = new DBContextDataContext())
+            {
+                try
+                {
+                    db.Cts_BranchMasters.InsertOnSubmit(warehouse);
+                    db.SubmitChanges();
+                    if (warehouse.bm_branchCode > 0) return true;
+                    else return false;
+                }
+                catch
+                {
+                    return false;
+                }
             }
         }
     }

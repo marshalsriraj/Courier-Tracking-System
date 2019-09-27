@@ -32,6 +32,21 @@ namespace DAL
             }
         }
 
+        public static List<Cts_Package> GetPackage(int cid)
+        {
+            try
+            {
+                using (DBContextDataContext db = new DBContextDataContext())
+                {
+                    return db.Cts_Packages.Where(x => x.pk_consignment_id == cid).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                return new List<Cts_Package>();
+            }
+        }
+
         public static List<Cts_Package> GetPackageId()
         {
             try
@@ -47,7 +62,7 @@ namespace DAL
             }
         }
 
-        public static bool ApprovePackage(int pk_id, bool status, int role, string empId, int cost)
+        public static bool ApprovePackage(int pk_id, bool status, int role, string empId, int cost, string location)
         {
             using (DBContextDataContext db = new DBContextDataContext())
             {
@@ -58,6 +73,7 @@ namespace DAL
                     user.pk_Employee_id = empId;
                     user.pk_Accept_Date = DateTime.Now.Date;
                     user.pk_cost = cost;
+                    user.pk_Current_location = location;
                     db.SubmitChanges();
                     return true;
                 }
@@ -67,5 +83,25 @@ namespace DAL
                 }
             }
         }
+
+        public static bool ApproveStatusPackage(int cid, string location, string status)
+        {
+            using (DBContextDataContext db = new DBContextDataContext())
+            {
+                try
+                {
+                    var package = db.Cts_Packages.Where(x => x.pk_consignment_id == cid).FirstOrDefault();
+                    package.pk_Current_location = location;
+                    package.pk_Package_Status = status;
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
     }
 }

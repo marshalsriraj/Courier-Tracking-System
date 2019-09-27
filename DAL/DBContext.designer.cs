@@ -30,9 +30,6 @@ namespace DAL
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertCts_BranchMaster(Cts_BranchMaster instance);
-    partial void UpdateCts_BranchMaster(Cts_BranchMaster instance);
-    partial void DeleteCts_BranchMaster(Cts_BranchMaster instance);
     partial void InsertRoleMaster(RoleMaster instance);
     partial void UpdateRoleMaster(RoleMaster instance);
     partial void DeleteRoleMaster(RoleMaster instance);
@@ -42,6 +39,9 @@ namespace DAL
     partial void InsertCts_User_Master(Cts_User_Master instance);
     partial void UpdateCts_User_Master(Cts_User_Master instance);
     partial void DeleteCts_User_Master(Cts_User_Master instance);
+    partial void InsertCts_BranchMaster(Cts_BranchMaster instance);
+    partial void UpdateCts_BranchMaster(Cts_BranchMaster instance);
+    partial void DeleteCts_BranchMaster(Cts_BranchMaster instance);
     #endregion
 		
 		public DBContextDataContext() : 
@@ -74,14 +74,6 @@ namespace DAL
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Cts_BranchMaster> Cts_BranchMasters
-		{
-			get
-			{
-				return this.GetTable<Cts_BranchMaster>();
-			}
-		}
-		
 		public System.Data.Linq.Table<RoleMaster> RoleMasters
 		{
 			get
@@ -105,114 +97,12 @@ namespace DAL
 				return this.GetTable<Cts_User_Master>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cts_BranchMaster")]
-	public partial class Cts_BranchMaster : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _bm_branchCode;
-		
-		private string _bm_branchName;
-		
-		private System.Nullable<bool> _bm_IsActive;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onbm_branchCodeChanging(int value);
-    partial void Onbm_branchCodeChanged();
-    partial void Onbm_branchNameChanging(string value);
-    partial void Onbm_branchNameChanged();
-    partial void Onbm_IsActiveChanging(System.Nullable<bool> value);
-    partial void Onbm_IsActiveChanged();
-    #endregion
-		
-		public Cts_BranchMaster()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bm_branchCode", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int bm_branchCode
+		public System.Data.Linq.Table<Cts_BranchMaster> Cts_BranchMasters
 		{
 			get
 			{
-				return this._bm_branchCode;
-			}
-			set
-			{
-				if ((this._bm_branchCode != value))
-				{
-					this.Onbm_branchCodeChanging(value);
-					this.SendPropertyChanging();
-					this._bm_branchCode = value;
-					this.SendPropertyChanged("bm_branchCode");
-					this.Onbm_branchCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bm_branchName", DbType="VarChar(50)")]
-		public string bm_branchName
-		{
-			get
-			{
-				return this._bm_branchName;
-			}
-			set
-			{
-				if ((this._bm_branchName != value))
-				{
-					this.Onbm_branchNameChanging(value);
-					this.SendPropertyChanging();
-					this._bm_branchName = value;
-					this.SendPropertyChanged("bm_branchName");
-					this.Onbm_branchNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bm_IsActive", DbType="Bit")]
-		public System.Nullable<bool> bm_IsActive
-		{
-			get
-			{
-				return this._bm_IsActive;
-			}
-			set
-			{
-				if ((this._bm_IsActive != value))
-				{
-					this.Onbm_IsActiveChanging(value);
-					this.SendPropertyChanging();
-					this._bm_IsActive = value;
-					this.SendPropertyChanged("bm_IsActive");
-					this.Onbm_IsActiveChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<Cts_BranchMaster>();
 			}
 		}
 	}
@@ -1330,6 +1220,140 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.Cts_User_Master = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cts_BranchMaster")]
+	public partial class Cts_BranchMaster : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _bm_branchCode;
+		
+		private string _bm_branchName;
+		
+		private System.Nullable<bool> _bm_IsActive;
+		
+		private System.Nullable<int> _bm_orders;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onbm_branchCodeChanging(int value);
+    partial void Onbm_branchCodeChanged();
+    partial void Onbm_branchNameChanging(string value);
+    partial void Onbm_branchNameChanged();
+    partial void Onbm_IsActiveChanging(System.Nullable<bool> value);
+    partial void Onbm_IsActiveChanged();
+    partial void Onbm_ordersChanging(System.Nullable<int> value);
+    partial void Onbm_ordersChanged();
+    #endregion
+		
+		public Cts_BranchMaster()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bm_branchCode", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int bm_branchCode
+		{
+			get
+			{
+				return this._bm_branchCode;
+			}
+			set
+			{
+				if ((this._bm_branchCode != value))
+				{
+					this.Onbm_branchCodeChanging(value);
+					this.SendPropertyChanging();
+					this._bm_branchCode = value;
+					this.SendPropertyChanged("bm_branchCode");
+					this.Onbm_branchCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bm_branchName", DbType="VarChar(50)")]
+		public string bm_branchName
+		{
+			get
+			{
+				return this._bm_branchName;
+			}
+			set
+			{
+				if ((this._bm_branchName != value))
+				{
+					this.Onbm_branchNameChanging(value);
+					this.SendPropertyChanging();
+					this._bm_branchName = value;
+					this.SendPropertyChanged("bm_branchName");
+					this.Onbm_branchNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bm_IsActive", DbType="Bit")]
+		public System.Nullable<bool> bm_IsActive
+		{
+			get
+			{
+				return this._bm_IsActive;
+			}
+			set
+			{
+				if ((this._bm_IsActive != value))
+				{
+					this.Onbm_IsActiveChanging(value);
+					this.SendPropertyChanging();
+					this._bm_IsActive = value;
+					this.SendPropertyChanged("bm_IsActive");
+					this.Onbm_IsActiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bm_orders", DbType="Int")]
+		public System.Nullable<int> bm_orders
+		{
+			get
+			{
+				return this._bm_orders;
+			}
+			set
+			{
+				if ((this._bm_orders != value))
+				{
+					this.Onbm_ordersChanging(value);
+					this.SendPropertyChanging();
+					this._bm_orders = value;
+					this.SendPropertyChanged("bm_orders");
+					this.Onbm_ordersChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

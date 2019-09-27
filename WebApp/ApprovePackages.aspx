@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container" style="margin-top: 5% !important;">
         <asp:GridView runat="server" ID="gdvApprovalData" class="table table-responsive" AutoGenerateColumns="false"
-            OnRowCommand="gdvApprovalData_RowCommand">
+            OnRowCommand="gdvApprovalData_RowCommand" OnRowDataBound="GridView1_RowDataBound">
 
             <Columns>
                 <asp:TemplateField HeaderText="Consignment ID">
@@ -40,12 +40,27 @@
                     </ItemTemplate>
                 </asp:TemplateField>
 
+                <asp:TemplateField HeaderText="Current location">
+                    <ItemTemplate>
+                        <asp:DropDownList ID="ddlLocation" runat="server">
+                        </asp:DropDownList>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+                <asp:TemplateField HeaderText="Status" Visible="false">
+                    <ItemTemplate>
+                        <asp:DropDownList ID="ddlStatus" runat="server">
+                            <asp:ListItem Value="Rejected" Text="Rejected"></asp:ListItem>
+                            <asp:ListItem Value="Booked" Text="Booked"></asp:ListItem>
+                            <asp:ListItem Value="In Transit" Text="In Transit"></asp:ListItem>
+                            <asp:ListItem Value="Delivered" Text="Delivered"></asp:ListItem>
+                        </asp:DropDownList>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
                 <asp:ButtonField HeaderText="Approve" ButtonType="Image" ImageUrl="Images/ok.png" CommandName="approve" />
                 <asp:ButtonField HeaderText="Reject" ButtonType="Image" ImageUrl="Images/delete.png" CommandName="reject" />
             </Columns>
-        </asp:GridView>
-
-        <asp:DropDownList ID="ddlLocation" runat="server">
-        </asp:DropDownList>
+        </asp:GridView>        
     </div>
 </asp:Content>

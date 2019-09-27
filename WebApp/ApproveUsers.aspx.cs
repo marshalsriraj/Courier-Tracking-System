@@ -16,7 +16,7 @@ namespace WebApp
         }
         public void LoadData()
         {
-            List<Cts_User_Master> user = BAL.AdminOperations.GetPendingList();
+            List<Cts_User_Master> user = BAL.AdminOperations.GetPendingList(int.Parse(Session["RoleID"].ToString()));
             gdvApprovalData.DataSource = user;
             gdvApprovalData.DataBind();
         }

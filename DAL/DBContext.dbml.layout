@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 8.5" name="DBContext">
   <DataContextMoniker Name="/DBContextDataContext" />
   <nestedChildShapes>
-    <classShape Id="76ab7067-eae0-4908-859e-3235a866e084" absoluteBounds="3.375, 1, 2, 1.3862939453125">
-      <DataClassMoniker Name="/DBContextDataContext/Cts_BranchMaster" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a95d515f-ca5e-4834-bd3f-f66659c2f804" absoluteBounds="3.3899999999999997, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="703895a4-bf6c-4182-becf-ec264f05813b" absoluteBounds="5.75, 4.625, 2, 1.7708968098958331">
       <DataClassMoniker Name="/DBContextDataContext/RoleMaster" />
       <nestedChildShapes>
@@ -26,19 +20,25 @@
         <elementListCompartment Id="afecde91-b11d-466e-8dee-c543be0a8700" absoluteBounds="9.265, 1.96, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(9.25 : 3.71875); (4.625 : 3.71875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.25 : 3.71875); (4.625 : 3.71875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DBContextDataContext/Cts_User_Master/Cts_User_Master_Cts_Package" />
       <nodes>
         <classShapeMoniker Id="417ee77a-6da4-4e15-85dc-eae984af4fc2" />
         <classShapeMoniker Id="af3130bd-cae6-4aee-8589-02aa430d384a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.75 : 5.29405843098958); (9.25 : 5.29405843098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.75 : 5.29405843098958); (9.25 : 5.29405843098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DBContextDataContext/RoleMaster/RoleMaster_Cts_User_Master" />
       <nodes>
         <classShapeMoniker Id="703895a4-bf6c-4182-becf-ec264f05813b" />
         <classShapeMoniker Id="417ee77a-6da4-4e15-85dc-eae984af4fc2" />
       </nodes>
     </associationConnector>
+    <classShape Id="ae090cdc-0b64-4975-94f4-502509d1a752" absoluteBounds="5.625, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBContextDataContext/Cts_BranchMaster" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26cd6e1a-890e-4697-90f1-20adce2f03e0" absoluteBounds="5.64, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

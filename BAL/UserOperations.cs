@@ -19,9 +19,24 @@ namespace BAL
             return DAL.UserFunctions.GetPackageId();
         }
 
-        public static bool ApprovePackage(int pk_id, bool status, int role, string empId, int cost)
+        public static List<Cts_Package> GetPackage(int cid)
         {
-            return DAL.UserFunctions.ApprovePackage(pk_id, status, role, empId, cost);
+            return DAL.UserFunctions.GetPackage(cid);
+        }
+
+        public static List<Cts_Package> PackageStatus()
+        {
+            return DAL.AdminOperations.PackageStatus();
+        }
+
+        public static bool ApprovePackage(int pk_id, bool status, int role, string empId, int cost, string location)
+        {
+            return DAL.UserFunctions.ApprovePackage(pk_id, status, role, empId, cost, location);
+        }
+
+        public static bool ApproveStatusPackage(int cid, string location, string status)
+        {
+            return DAL.UserFunctions.ApproveStatusPackage(cid, location, status);
         }
     }
 }

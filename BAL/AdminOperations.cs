@@ -9,9 +9,9 @@ namespace BAL
 {
     public class AdminOperations
     {
-        public static List<Cts_User_Master> GetPendingList()
+        public static List<Cts_User_Master> GetPendingList(int roleId)
         {
-            return DAL.AdminOperations.GetPendingList();
+            return DAL.AdminOperations.GetPendingList(roleId);
         }
 
         public static bool ApprovalUsers(int um_id, bool status, string empId, string name, long salary)
@@ -22,6 +22,11 @@ namespace BAL
         public static List<Cts_BranchMaster> GetWarehouse()
         {
             return DAL.AdminOperations.GetWarehouse();
+        }
+
+        public static bool AddWarehouse(Cts_BranchMaster warehouse)
+        {
+            return DAL.AdminOperations.AddWarehouse(warehouse);
         }
     }
 }

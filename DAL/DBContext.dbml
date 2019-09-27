@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Courier_Tracking_System" Class="DBContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=PC446411;Initial Catalog=Courier_Tracking_System;Persist Security Info=True;User ID=sa" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="Courier_Tracking_SystemConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Cts_BranchMaster" Member="Cts_BranchMasters">
-    <Type Name="Cts_BranchMaster">
-      <Column Name="bm_branchCode" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="bm_branchName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="bm_IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.RoleMaster" Member="RoleMasters">
     <Type Name="RoleMaster">
       <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -57,6 +50,14 @@
       <Column Name="um_emp_cid" Type="System.String" DbType="VarChar(37)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="Cts_User_Master_Cts_Package" Member="Cts_Packages" ThisKey="um_id" OtherKey="pk_Customer_id" Type="Cts_Package" />
       <Association Name="RoleMaster_Cts_User_Master" Member="RoleMaster" ThisKey="um_RoleId" OtherKey="RoleID" Type="RoleMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cts_BranchMaster" Member="Cts_BranchMasters">
+    <Type Name="Cts_BranchMaster">
+      <Column Name="bm_branchCode" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="bm_branchName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bm_IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="bm_orders" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
