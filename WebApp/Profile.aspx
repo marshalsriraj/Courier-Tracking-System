@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="WebApp.Profile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+         
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto" style="float:right;">
             <li class="nav-item">
@@ -72,76 +74,5 @@
 
     </div>
 
-
-    <%--<asp:GridView ID="gdvProfile" runat="server" AutoGenerateColumns="false" OnRowEditing="gdvProfile_RowEditing" 
-        OnRowCancelingEdit="gdvProfile_RowCancelingEdit" OnRowUpdating="gdvProfile_RowUpdating">
-        <Columns>
-            <asp:TemplateField HeaderText="First Name">
-                <ItemTemplate>
-                    <asp:Label ID="lblFname" runat="server" Text='<%# Eval("um_firstName") %>'></asp:Label>
-                </ItemTemplate>
-                <EditItemTemplate>
-                    <asp:TextBox ID="txtFname" runat="server" Text='<%# Eval("um_firstName") %>'></asp:TextBox>
-                </EditItemTemplate>
-            </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="Last Name">
-                <ItemTemplate>
-                    <asp:Label ID="lblLname" runat="server" Text='<%# Eval("um_lastName") %>'></asp:Label>
-                </ItemTemplate>
-                <EditItemTemplate>
-                    <asp:TextBox ID="txtLname" runat="server" Text='<%# Eval("um_lastName") %>'></asp:TextBox>
-                </EditItemTemplate>
-            </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="Password">
-                <ItemTemplate>
-                    <asp:Label ID="lblPwd" runat="server" Text='<%# Eval("um_password") %>'></asp:Label>
-                </ItemTemplate>
-                <EditItemTemplate>
-                    <asp:TextBox ID="txtPwd" runat="server" Text='<%# Eval("um_password") %>'></asp:TextBox>
-                </EditItemTemplate>
-            </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="Contact">
-                <ItemTemplate>
-                    <asp:Label ID="lblContact" runat="server" Text='<%# Eval("um_contact") %>'></asp:Label>
-                </ItemTemplate>
-                <EditItemTemplate>
-                    <asp:TextBox ID="txtContact" runat="server" Text='<%# Eval("um_contact") %>'></asp:TextBox>
-                </EditItemTemplate>
-            </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="Permanent Address">
-                <ItemTemplate>
-                    <asp:Label ID="lblPerAddress" runat="server" Text='<%# Eval("um_PerAddress") %>'></asp:Label>
-                </ItemTemplate>
-                <EditItemTemplate>
-                    <asp:TextBox ID="txtPerAddress" runat="server" Text='<%# Eval("um_PerAddress") %>'></asp:TextBox>
-                </EditItemTemplate>
-            </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="Correspondence Address">
-                <ItemTemplate>
-                    <asp:Label ID="lblCorrAddress" runat="server" Text='<%# Eval("um_CorAddress") %>'></asp:Label>
-                </ItemTemplate>
-                <EditItemTemplate>
-                    <asp:TextBox ID="txtCorrAddress" runat="server" Text='<%# Eval("um_CorAddress") %>'></asp:TextBox>
-                </EditItemTemplate>
-            </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="Email ID">
-                <ItemTemplate>
-                    <asp:Label ID="lblEmail" runat="server" Text='<%# Eval("um_emailId") %>'></asp:Label>
-                </ItemTemplate>
-                <EditItemTemplate>
-                    <asp:TextBox ID="txtEmail" runat="server" Text='<%# Eval("um_emailId") %>'></asp:TextBox>
-                </EditItemTemplate>
-            </asp:TemplateField>
-
-            <asp:CommandField ButtonType="Image" InsertImageUrl="Images/edit.png" ShowEditButton="true" HeaderText="Action" />
-            <asp:CommandField ButtonType="Image" InsertImageUrl="Images/ok.png" ShowSelectButton="true" HeaderText="Action" />
-
-        </Columns>
-    </asp:GridView>--%>
+        
 </asp:Content>

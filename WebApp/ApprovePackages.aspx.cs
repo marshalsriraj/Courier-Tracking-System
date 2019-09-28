@@ -44,7 +44,7 @@ namespace WebApp
             string empId = Session["EmpId"].ToString();
             int cost = int.Parse((row.FindControl("txtPkCost") as TextBox).Text);
             string cLocation;
-            if (int.Parse(Session["RoleID"].ToString()) == 3)
+            if (int.Parse(Session["RoleID"].ToString()) == 3 || int.Parse(Session["RoleID"].ToString()) == 2)
             {
                 cLocation = (row.FindControl("ddlLocation") as DropDownList).Text;
             }

@@ -142,7 +142,9 @@
     <Content Include="ConsignmentBill.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Shipment.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="ApprovePackageX.aspx" />
     <Content Include="Dashboard.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -161,6 +163,7 @@
     <Content Include="Profile.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Scripts\Script.js" />
+    <Content Include="TrackShipment.aspx" />
     <Content Include="Warehouses.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Login.aspx" />
@@ -243,6 +246,13 @@
     <Compile Include="ConsignmentBill.aspx.designer.cs">
       <DependentUpon>ConsignmentBill.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ApprovePackageX.aspx.cs">
+      <DependentUpon>ApprovePackageX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApprovePackageX.aspx.designer.cs">
+      <DependentUpon>ApprovePackageX.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -295,6 +305,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TrackShipment.aspx.cs">
+      <DependentUpon>TrackShipment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrackShipment.aspx.designer.cs">
+      <DependentUpon>TrackShipment.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

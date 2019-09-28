@@ -100,3 +100,7 @@
         return false;
     }
 }
+
+function packageValidate() {
+    var pkWeight = document.getElementById("txtPackageWeight").value;
+}

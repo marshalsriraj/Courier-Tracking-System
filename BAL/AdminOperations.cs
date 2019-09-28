@@ -28,5 +28,10 @@ namespace BAL
         {
             return DAL.AdminOperations.AddWarehouse(warehouse);
         }
+
+        public static List<Cts_Package> GetAllPackageDetails()
+        {
+            return DAL.AdminOperations.GetAllPackageDetails();
+        }
     }
 }

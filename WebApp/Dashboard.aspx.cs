@@ -12,50 +12,18 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) LoadData();
+            if (!IsPostBack) GetData();
         }
 
-        public void LoadData()
+        public void GetData()
         {
-            List<Cts_Package> package = BAL.UserOperations.PackageStatus();
-            gdvApprovalData.DataSource = package;
-            gdvApprovalData.DataBind();
-        }
-
-        protected void gdvApprovalData_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            GridViewRow row = gdvApprovalData.Rows[int.Parse(e.CommandArgument.ToString())];
-            int cid = int.Parse((row.FindControl("lblcnsngId") as Label).Text);
-            string location = (row.FindControl("ddlLocation") as DropDownList).Text;
-            string status = (row.FindControl("ddlStatus") as DropDownList).Text;
-            if (e.CommandName == "approve")
+            List<DAL.Cts_Package> Packages = BAL.AdminOperations.GetAllPackageDetails();
+            if(Packages.Count>0)
             {
-                if (BAL.UserOperations.ApproveStatusPackage(cid, location, status))
-                {
-                    string _msg = string.Format("SuccessFunction('{0}')", "Package Approved Successfully");
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
-
-                }
-                else
-                {
-                    string _msg = string.Format("SuccessFunction('{0}')", "Package Rejected");
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
-                }
-            }
-            LoadData();
-        }
-
-        protected void gdvApprovalData_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                DropDownList ddl = (e.Row.FindControl("ddlLocation") as DropDownList);
-                List<Cts_BranchMaster> warehouses = BAL.AdminOperations.GetWarehouse();
-                ddl.DataSource = warehouses;
-                ddl.DataTextField = "bm_branchName";
-                ddl.DataValueField = "bm_branchName";
-                ddl.DataBind();
-                ddl.Items.Insert(0, new ListItem("--Select Location--", "0"));
+                lblTotal.Text = Packages.Count.ToString();
+                lblAccepted.Text = Packages.Where(x => x.pk_isActive == true).Count().ToString();
+                lblRejected.Text = Packages.Where(x => x.pk_isActive == false).Count().ToString();
+                lblPending.Text = Packages.Where(x => x.pk_isActive == null).Count().ToString();
             }
         }
     }

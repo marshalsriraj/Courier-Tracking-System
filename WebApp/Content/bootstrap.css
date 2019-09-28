@@ -3279,7 +3279,7 @@ input[type="button"].btn-block {
 .dropdown-menu > li > a:focus {
   color: #ffffff;
   text-decoration: none;
-  background-color: #428bca;
+  background-color: black;
 }
 
 .dropdown-menu > .active > a,
@@ -4502,8 +4502,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse {
   /*background-color: #222222;*/
-  background-image:linear-gradient(to right,#804FB3,#08B3E5);
-  border-color: #080808;
+  /*background-image:linear-gradient(to right,#804FB3,#08B3E5);*/
+   background-color: #C70039;
+  /*border-color: #080808;*/
+  border-color:white;
 }
 
 .navbar-inverse .navbar-brand {
@@ -4521,13 +4523,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #999999;
+  color:#ffffff  ;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #ffffff;
-  background-color: transparent;
+  color: #fff ; 
+  background-color: black;
 }
 
 .navbar-inverse .navbar-nav > .active > a,

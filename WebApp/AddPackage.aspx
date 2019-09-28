@@ -15,14 +15,14 @@
     <asp:HiddenField runat="server" ID="hidId" />
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="inputEmail4">Package Weight</label>
-            <asp:TextBox runat="server" ID="txtPackageWeight" class="form-control" placeholder="Package Weight"
+            <label for="txtPackageWeight">Package Weight</label>
+            <asp:TextBox runat="server" ID="txtPackageWeight" class="form-control" placeholder="Package Weight" TextMode="Number"
                 ClientIDMode="Static"></asp:TextBox>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputAddress">Package Type</label>
+                <label for="ddlPackageType">Package Type</label>
                 <asp:DropDownList runat="server" ID="ddlPackageType" class="form-control" ClientIDMode="Static" 
                     OnSelectedIndexChanged="ddlPackageType_SelectedIndexChanged" AutoPostBack="True">
                     <asp:ListItem Value="" Text="--Select--"></asp:ListItem>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="form-group col-md-6">
-            <label for="inputPassword4">Sender Address</label>
+            <label for="txtSenderAddress">Sender Address</label>
             <asp:TextBox runat="server" ID="txtSenderAddress" class="form-control" placeholder="Sender Address" TextMode="MultiLine"
                 ClientIDMode="Static">
             </asp:TextBox>
@@ -45,7 +45,7 @@
 
         <div class="form-group col-md-6">
             <label for="ddlSendCity">City</label>
-            <asp:DropDownList ID="ddlSendCity" runat="server" CssClass="form-control">
+            <asp:DropDownList ID="ddlSendCity" runat="server" CssClass="form-control" ClientIDMode="Static">
                 <asp:ListItem Text="--Select city--" Value="0"></asp:ListItem>
                 <asp:ListItem Text="Chennai" Value="Chennai"></asp:ListItem>
                 <asp:ListItem Text="Bangalore" Value="Bangalore"></asp:ListItem>
@@ -69,7 +69,7 @@
 
         <div class="form-group col-md-6">
             <label for="ddlReceiveCity">City</label>
-            <asp:DropDownList ID="ddlReceiveCity" runat="server" CssClass="form-control">
+            <asp:DropDownList ID="ddlReceiveCity" runat="server" CssClass="form-control" ClientIDMode="Static">
                 <asp:ListItem Text="--Select city--" Value="0"></asp:ListItem>
                 <asp:ListItem Text="Chennai" Value="Chennai"></asp:ListItem>
                 <asp:ListItem Text="Bangalore" Value="Bangalore"></asp:ListItem>
@@ -84,6 +84,7 @@
             </asp:DropDownList>
         </div>        
 
-        <asp:Button runat="server" ID="btnSubmit" Text="Submit" class="btn btn-primary" OnClick="btnSubmit_Click" />
+        <asp:Button runat="server" ID="btnSubmit" Text="Submit" class="btn btn-primary" ClientIDMode="Static" OnClick="btnSubmit_Click" 
+            OnClientClick="return packageValidate()"/>
     </div>
 </asp:Content>

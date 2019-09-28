@@ -82,5 +82,15 @@ namespace DAL
                 }
             }
         }
+
+
+        public static List<Cts_Package> GetAllPackageDetails()
+        {
+            using (DBContextDataContext db=new DBContextDataContext())
+            {
+                return db.Cts_Packages.ToList();
+            }
+        }
+        
     }
 }

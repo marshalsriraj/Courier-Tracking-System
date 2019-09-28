@@ -11,7 +11,7 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -45,7 +45,7 @@
             }
         }        
     </script>
-
+ 
     <script type="text/javascript">
         function warehouseAdd() {
             document.getElementById("warehouseAdd").style.display = "block";
@@ -84,7 +84,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">ABC Courier </a>
+                   
+                    <a class="navbar-brand" runat="server" href="Dashboard"> <i class="fa fa-truck" aria-hidden="true" style="color:white !important"></i> ABC Courier </a>
                 </div>
                 <%
                     try
@@ -94,8 +95,6 @@
                             if (Session["RoleId"].ToString() == "1" || Session["RoleId"].ToString() == "2")
                             {%>
                 <ul class="nav navbar-nav">
-                    <li><a href="Profile.aspx">Profile</a></li>
-                    <li><a href="ApproveUsers">Approve Users</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Warehouse Management
                         <span class="caret"></span></a>
@@ -108,8 +107,8 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Package Management
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="ApprovePackages">Approve Package</a></li>
-                            <li><a href="Dashboard" onclick="return status()">Update status</a></li>
+                            <li><a href="ApprovePackageX">Approve Package</a></li>
+                            <li><a href="Dashboard">Update status</a></li>
                             <li><a href="#">Track Package</a></li>
                         </ul>
                     </li>
@@ -118,8 +117,6 @@
                     else if (Session["RoleId"].ToString() == "3")
                     {%>
                 <ul class="nav navbar-nav">
-                    <li><a href="Profile.aspx">Profile</a></li>
-                    <li><a href="#">Approve Users</a></li>
 
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Package Management
@@ -135,14 +132,14 @@
                     else if (Session["RoleId"].ToString() == "4")
                     {%>
                 <ul class="nav navbar-nav">
-                    <li><a href="Profile.aspx">Profile</a></li>
+                   
 
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Packages
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="AddPackage">Add Package</a></li>
-                            <li><a href="#">Package Status</a></li>
+                            <li><a href="Package">Package Status</a></li>
                             <li><a href="#">Track Package</a></li>
                             <li><a href="ConsignmentBill">Consignment Bill</a></li>
                         </ul>
@@ -160,7 +157,8 @@
                         <asp:Label runat="server" ID="lblUser" Text="Welcome, User"></asp:Label>
                     </a>
                     </li>
-                    <li><a runat="server" href="~/Login">Logout</a></li>
+                     <li><a href="Profile.aspx"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                    <li><a runat="server" href="~/Login"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                 </ul>
             </div>
         </div>
