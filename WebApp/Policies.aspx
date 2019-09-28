@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Policies.aspx.cs" Inherits="WebApp.Policies" %>
+﻿<%@ Page Title="ABC Courier Services - Policies" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Policies.aspx.cs" Inherits="WebApp.Policies" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="control-box p-3 main-content">
   					 <center><h1>Policies</h1></center>

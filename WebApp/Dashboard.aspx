@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="WebApp.Dashboard" %>
+﻿<%@ Page Title="ABC Courier Services - Dashboard" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="WebApp.Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -173,7 +173,7 @@
 
                 <div class="col-md-3 col-sm-4">
                     <div class="wrimagecard wrimagecard-topimage">
-                        <a href="#">
+                        <a href="Warehouses">
                             <div class="wrimagecard-topimage_header" style="background-color: rgba(130, 93, 9, 0.1)">
                                 <center><i class="fa fa-building-o" style="color:#825d09"></i></center>
                             </div>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PackageTypes.aspx.cs" Inherits="WebApp.PackageTypes" %>
+﻿<%@ Page Title="ABC Courier Services - Package Types" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PackageTypes.aspx.cs" Inherits="WebApp.PackageTypes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="control-box p-3 main-content">

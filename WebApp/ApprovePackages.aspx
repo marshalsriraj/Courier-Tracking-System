@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ApprovePackages.aspx.cs" Inherits="WebApp.ApprovePackages" %>
+﻿<%@ Page Title="ABC Courier Services - Packages" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ApprovePackages.aspx.cs" Inherits="WebApp.ApprovePackages" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container" style="margin-top: 5% !important;">

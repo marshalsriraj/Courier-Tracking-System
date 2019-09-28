@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Warehouses.aspx.cs" Inherits="WebApp.Warehouses" %>
+﻿<%@ Page Title="ABC Courier Services - Warehouses" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Warehouses.aspx.cs" Inherits="WebApp.Warehouses" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="container" style="margin-top: 5% !important;">
+    <div class="container" style="margin-top: 5% !important; text-align: center">
 
         <asp:GridView ID="gdvWarehouse" runat="server" AutoGenerateColumns="false">
             <Columns>

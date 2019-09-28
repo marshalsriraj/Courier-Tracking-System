@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddPackage.aspx.cs" Inherits="WebApp.AddPackage" %>
+﻿<%@ Page Title="ABC Courier Services - Add Package" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddPackage.aspx.cs" Inherits="WebApp.AddPackage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="border-bottom-info" style="margin-bottom: 4%; padding-bottom: 2%; margin-top: 5% !important">

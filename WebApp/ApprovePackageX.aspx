@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ApprovePackageX.aspx.cs" Inherits="WebApp.ApprovePackageX" %>
+﻿<%@ Page Title="ABC Courier Services - Approve Packages" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ApprovePackageX.aspx.cs" Inherits="WebApp.ApprovePackageX" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="UpdateStatus"  style="margin-top:5% !important;">
