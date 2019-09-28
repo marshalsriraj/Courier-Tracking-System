@@ -13,6 +13,15 @@ namespace WebApp {
     public partial class Dashboard {
         
         /// <summary>
+        /// total control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor total;
+        
+        /// <summary>
         /// lblTotal control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace WebApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotal;
+        
+        /// <summary>
+        /// accepted control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor accepted;
         
         /// <summary>
         /// lblAccepted control.
@@ -31,6 +49,15 @@ namespace WebApp {
         protected global::System.Web.UI.WebControls.Label lblAccepted;
         
         /// <summary>
+        /// rejected control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor rejected;
+        
+        /// <summary>
         /// lblRejected control.
         /// </summary>
         /// <remarks>
@@ -38,6 +65,15 @@ namespace WebApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRejected;
+        
+        /// <summary>
+        /// pending control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor pending;
         
         /// <summary>
         /// lblPending control.

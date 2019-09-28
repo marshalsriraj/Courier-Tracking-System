@@ -34,7 +34,6 @@ namespace WebApp
                 {
                     string _msg = string.Format("SuccessFunction('{0}')", "Package Approved Successfully");
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
-
                 }
                 else
                 {

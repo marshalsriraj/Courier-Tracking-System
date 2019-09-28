@@ -91,6 +91,7 @@ namespace DAL
                 try
                 {
                     var package = db.Cts_Packages.Where(x => x.pk_consignment_id == cid).FirstOrDefault();
+                    package.pk_isActive = true;
                     package.pk_Current_location = location;
                     package.pk_Package_Status = status;
                     db.SubmitChanges();

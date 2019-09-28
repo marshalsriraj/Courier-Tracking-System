@@ -58,15 +58,6 @@ namespace WebApp {
         protected global::System.Web.UI.WebControls.TextBox txtSenderAddress;
         
         /// <summary>
-        /// ddlSendCity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSendCity;
-        
-        /// <summary>
         /// txtReceiverAddress control.
         /// </summary>
         /// <remarks>
@@ -74,6 +65,15 @@ namespace WebApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtReceiverAddress;
+        
+        /// <summary>
+        /// ddlSendCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSendCity;
         
         /// <summary>
         /// ddlReceiveCity control.

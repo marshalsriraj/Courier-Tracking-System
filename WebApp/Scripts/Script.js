@@ -103,4 +103,48 @@
 
 function packageValidate() {
     var pkWeight = document.getElementById("txtPackageWeight").value;
+    var sendAddress = document.getElementById("txtSenderAddress").value;
+    var recAddress = document.getElementById("txtReceiverAddress").value;
+    var s = document.getElementById("ddlSendCity");
+    var sendCity = s.options[s.selectedIndex].value;
+    var r = document.getElementById("ddlReceiveCity");
+    var recCity = s.options[r.selectedIndex].value;
+    var p = document.getElementById("ddlPackageType");
+    var package = p.options[p.selectedIndex].value;
+
+    if (pkWeight == '') {
+        document.getElementById("txtPackageWeight").focus();
+        alert("Package weight cannot be empty!");
+        return false;
+    }
+
+    else if (sendAddress == '') {
+        document.getElementById("txtSenderAddress").focus();
+        alert("Sender address cannot be empty!");
+        return false;
+    }
+
+    else if (sendCity == '0') {
+        document.getElementById("txtSenderAddress").focus();
+        alert("Select a city!");
+        return false;
+    }
+
+    else if (recAddress == '') {
+        document.getElementById("txtReceiverAddress").focus();
+        alert("Receiver address cannot be empty!");
+        return false;
+    }
+
+    else if (recCity == '0') {
+        document.getElementById("txtReceiverAddress").focus();
+        alert("Select a city!");
+        return false;
+    }
+
+    else if (package == '0') {
+        document.getElementById("txtReceiverAddress").focus();
+        alert("Select a package!");
+        return false;
+    }
 }

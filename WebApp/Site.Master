@@ -14,6 +14,7 @@
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script src="Scripts/Script.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
         function ErrFunction(message) {
@@ -92,7 +93,10 @@
                     {
                         if (Session["RoleId"] != null)
                         {
-                            if (Session["RoleId"].ToString() == "1" || Session["RoleId"].ToString() == "2")
+                            if (Session["RoleId"].ToString() == "1")
+                            {%>
+                <%}
+                    else if (Session["RoleId"].ToString() == "2")
                             {%>
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
@@ -108,8 +112,7 @@
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="ApprovePackageX">Approve Package</a></li>
-                            <li><a href="Dashboard">Update status</a></li>
-                            <li><a href="#">Track Package</a></li>
+                            <li><a href="TrackShipment">Track Package</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -123,25 +126,23 @@
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="ApprovePackages">Approve Package</a></li>
-                            <li><a href="Dashboard" onclick="return status()">Update status</a></li>
-                            <li><a href="#">Track Package</a></li>
+                            <li><a href="Dashboard">Update status</a></li>
+                            <li><a href="TrackShipment">Track Package</a></li>
                         </ul>
                     </li>
                 </ul>
                 <%}
                     else if (Session["RoleId"].ToString() == "4")
                     {%>
-                <ul class="nav navbar-nav">
-                   
+                <ul class="nav navbar-nav">                  
 
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Packages
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="AddPackage">Add Package</a></li>
-                            <li><a href="Package">Package Status</a></li>
-                            <li><a href="#">Track Package</a></li>
-                            <li><a href="ConsignmentBill">Consignment Bill</a></li>
+                            <li><a href="TrackShipment">Track Package</a></li>
+                            <%--<li><a href="ConsignmentBill">Consignment Bill</a></li>--%>
                         </ul>
                     </li>
                 </ul>

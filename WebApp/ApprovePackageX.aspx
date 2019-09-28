@@ -43,14 +43,14 @@
 
                 <asp:TemplateField HeaderText="Current location">
                     <ItemTemplate>
-                        <asp:DropDownList ID="ddlLocation" runat="server" CssClass="form-control">
+                        <asp:DropDownList ID="ddlLocation" runat="server" CssClass="form-control" SelectedValue='<%# Eval("pk_Current_location") %>'>
                         </asp:DropDownList>
                     </ItemTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="Status">
                     <ItemTemplate>
-                        <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-control">
+                        <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-control" SelectedValue='<%# Eval("pk_Package_Status") %>' >
                             <asp:ListItem Value="Rejected" Text="Rejected"></asp:ListItem>
                             <asp:ListItem Value="Booked" Text="Booked"></asp:ListItem>
                             <asp:ListItem Value="In Transit" Text="In Transit"></asp:ListItem>
@@ -58,9 +58,9 @@
                         </asp:DropDownList>
                     </ItemTemplate>
                 </asp:TemplateField>                
-
+                                
                 <asp:ButtonField HeaderText="Approve" ButtonType="Image" ImageUrl="Images/ok.png" CommandName="approve"/>
-                <asp:ButtonField HeaderText="Reject" ButtonType="Image" ImageUrl="Images/delete.png" CommandName="reject" />
+                <asp:ButtonField HeaderText="Reject" ButtonType="Image" ImageUrl="Images/delete.png" CommandName="reject"/>
 
             </Columns>
         </asp:GridView>

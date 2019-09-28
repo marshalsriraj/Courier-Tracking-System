@@ -25,7 +25,7 @@
                 <label for="ddlPackageType">Package Type</label>
                 <asp:DropDownList runat="server" ID="ddlPackageType" class="form-control" ClientIDMode="Static" 
                     OnSelectedIndexChanged="ddlPackageType_SelectedIndexChanged" AutoPostBack="True">
-                    <asp:ListItem Value="" Text="--Select--"></asp:ListItem>
+                    <asp:ListItem Value="0" Text="--Select--"></asp:ListItem>
                     <asp:ListItem Value="1" Text="Standard courier services"></asp:ListItem>
                     <asp:ListItem Value="2" Text="Overnight service"></asp:ListItem>
                     <asp:ListItem Value="3" Text="Same day express courier"></asp:ListItem>
@@ -39,6 +39,13 @@
         <div class="form-group col-md-6">
             <label for="txtSenderAddress">Sender Address</label>
             <asp:TextBox runat="server" ID="txtSenderAddress" class="form-control" placeholder="Sender Address" TextMode="MultiLine"
+                ClientIDMode="Static">
+            </asp:TextBox>
+        </div>        
+
+        <div class="form-group col-md-6">
+            <label for="txtReceiverAddress">Receiver Address</label>
+            <asp:TextBox runat="server" ID="txtReceiverAddress" class="form-control" placeholder="Receiver Address" TextMode="MultiLine"
                 ClientIDMode="Static">
             </asp:TextBox>
         </div>
@@ -61,13 +68,6 @@
         </div>
 
         <div class="form-group col-md-6">
-            <label for="txtReceiverAddress">Receiver Address</label>
-            <asp:TextBox runat="server" ID="txtReceiverAddress" class="form-control" placeholder="Receiver Address" TextMode="MultiLine"
-                ClientIDMode="Static">
-            </asp:TextBox>
-        </div>
-
-        <div class="form-group col-md-6">
             <label for="ddlReceiveCity">City</label>
             <asp:DropDownList ID="ddlReceiveCity" runat="server" CssClass="form-control" ClientIDMode="Static">
                 <asp:ListItem Text="--Select city--" Value="0"></asp:ListItem>
@@ -84,7 +84,6 @@
             </asp:DropDownList>
         </div>        
 
-        <asp:Button runat="server" ID="btnSubmit" Text="Submit" class="btn btn-primary" ClientIDMode="Static" OnClick="btnSubmit_Click" 
-            OnClientClick="return packageValidate()"/>
+        <asp:Button runat="server" ID="btnSubmit" Text="Submit" class="btn btn-primary" ClientIDMode="Static" OnClientClick="return packageValidate();" OnClick="btnSubmit_Click" />
     </div>
 </asp:Content>

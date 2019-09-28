@@ -133,13 +133,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Sql\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddPackage.aspx" />
     <Content Include="ApprovePackages.aspx" />
     <Content Include="ApproveUsers.aspx" />
-    <Content Include="ConsignmentBill.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Shipment.css" />
@@ -160,9 +158,12 @@
     <Content Include="Images\ok.png" />
     <Content Include="Images\user.png" />
     <Content Include="Images\usericon.png" />
+    <Content Include="PackageTypes.aspx" />
+    <Content Include="Policies.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Scripts\Script.js" />
+    <Content Include="Sql\Courier.sql" />
     <Content Include="TrackShipment.aspx" />
     <Content Include="Warehouses.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -239,13 +240,6 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="ConsignmentBill.aspx.cs">
-      <DependentUpon>ConsignmentBill.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ConsignmentBill.aspx.designer.cs">
-      <DependentUpon>ConsignmentBill.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ApprovePackageX.aspx.cs">
       <DependentUpon>ApprovePackageX.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -276,6 +270,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageTypes.aspx.cs">
+      <DependentUpon>PackageTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageTypes.aspx.designer.cs">
+      <DependentUpon>PackageTypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Policies.aspx.cs">
+      <DependentUpon>Policies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Policies.aspx.designer.cs">
+      <DependentUpon>Policies.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>

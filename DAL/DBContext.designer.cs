@@ -33,15 +33,15 @@ namespace DAL
     partial void InsertRoleMaster(RoleMaster instance);
     partial void UpdateRoleMaster(RoleMaster instance);
     partial void DeleteRoleMaster(RoleMaster instance);
-    partial void InsertCts_Package(Cts_Package instance);
-    partial void UpdateCts_Package(Cts_Package instance);
-    partial void DeleteCts_Package(Cts_Package instance);
     partial void InsertCts_User_Master(Cts_User_Master instance);
     partial void UpdateCts_User_Master(Cts_User_Master instance);
     partial void DeleteCts_User_Master(Cts_User_Master instance);
     partial void InsertCts_BranchMaster(Cts_BranchMaster instance);
     partial void UpdateCts_BranchMaster(Cts_BranchMaster instance);
     partial void DeleteCts_BranchMaster(Cts_BranchMaster instance);
+    partial void InsertCts_Package(Cts_Package instance);
+    partial void UpdateCts_Package(Cts_Package instance);
+    partial void DeleteCts_Package(Cts_Package instance);
     #endregion
 		
 		public DBContextDataContext() : 
@@ -82,14 +82,6 @@ namespace DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<Cts_Package> Cts_Packages
-		{
-			get
-			{
-				return this.GetTable<Cts_Package>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Cts_User_Master> Cts_User_Masters
 		{
 			get
@@ -103,6 +95,14 @@ namespace DAL
 			get
 			{
 				return this.GetTable<Cts_BranchMaster>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Cts_Package> Cts_Packages
+		{
+			get
+			{
+				return this.GetTable<Cts_Package>();
 			}
 		}
 	}
@@ -290,373 +290,6 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.RoleMaster = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cts_Package")]
-	public partial class Cts_Package : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _pk_consignment_id;
-		
-		private System.Nullable<System.DateTime> _pk_Accept_Date;
-		
-		private System.Nullable<double> _pk_Package_weight;
-		
-		private System.Nullable<double> _pk_cost;
-		
-		private string _pk_Sender_address;
-		
-		private string _pk_Receiver_address;
-		
-		private string _pk_package_type;
-		
-		private string _pk_Employee_id;
-		
-		private System.Nullable<int> _pk_Customer_id;
-		
-		private string _pk_Current_location;
-		
-		private string _pk_Package_Status;
-		
-		private System.Nullable<bool> _pk_isActive;
-		
-		private EntityRef<Cts_User_Master> _Cts_User_Master;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onpk_consignment_idChanging(int value);
-    partial void Onpk_consignment_idChanged();
-    partial void Onpk_Accept_DateChanging(System.Nullable<System.DateTime> value);
-    partial void Onpk_Accept_DateChanged();
-    partial void Onpk_Package_weightChanging(System.Nullable<double> value);
-    partial void Onpk_Package_weightChanged();
-    partial void Onpk_costChanging(System.Nullable<double> value);
-    partial void Onpk_costChanged();
-    partial void Onpk_Sender_addressChanging(string value);
-    partial void Onpk_Sender_addressChanged();
-    partial void Onpk_Receiver_addressChanging(string value);
-    partial void Onpk_Receiver_addressChanged();
-    partial void Onpk_package_typeChanging(string value);
-    partial void Onpk_package_typeChanged();
-    partial void Onpk_Employee_idChanging(string value);
-    partial void Onpk_Employee_idChanged();
-    partial void Onpk_Customer_idChanging(System.Nullable<int> value);
-    partial void Onpk_Customer_idChanged();
-    partial void Onpk_Current_locationChanging(string value);
-    partial void Onpk_Current_locationChanged();
-    partial void Onpk_Package_StatusChanging(string value);
-    partial void Onpk_Package_StatusChanged();
-    partial void Onpk_isActiveChanging(System.Nullable<bool> value);
-    partial void Onpk_isActiveChanged();
-    #endregion
-		
-		public Cts_Package()
-		{
-			this._Cts_User_Master = default(EntityRef<Cts_User_Master>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_consignment_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int pk_consignment_id
-		{
-			get
-			{
-				return this._pk_consignment_id;
-			}
-			set
-			{
-				if ((this._pk_consignment_id != value))
-				{
-					this.Onpk_consignment_idChanging(value);
-					this.SendPropertyChanging();
-					this._pk_consignment_id = value;
-					this.SendPropertyChanged("pk_consignment_id");
-					this.Onpk_consignment_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Accept_Date", DbType="Date")]
-		public System.Nullable<System.DateTime> pk_Accept_Date
-		{
-			get
-			{
-				return this._pk_Accept_Date;
-			}
-			set
-			{
-				if ((this._pk_Accept_Date != value))
-				{
-					this.Onpk_Accept_DateChanging(value);
-					this.SendPropertyChanging();
-					this._pk_Accept_Date = value;
-					this.SendPropertyChanged("pk_Accept_Date");
-					this.Onpk_Accept_DateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Package_weight", DbType="Float")]
-		public System.Nullable<double> pk_Package_weight
-		{
-			get
-			{
-				return this._pk_Package_weight;
-			}
-			set
-			{
-				if ((this._pk_Package_weight != value))
-				{
-					this.Onpk_Package_weightChanging(value);
-					this.SendPropertyChanging();
-					this._pk_Package_weight = value;
-					this.SendPropertyChanged("pk_Package_weight");
-					this.Onpk_Package_weightChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_cost", DbType="Float")]
-		public System.Nullable<double> pk_cost
-		{
-			get
-			{
-				return this._pk_cost;
-			}
-			set
-			{
-				if ((this._pk_cost != value))
-				{
-					this.Onpk_costChanging(value);
-					this.SendPropertyChanging();
-					this._pk_cost = value;
-					this.SendPropertyChanged("pk_cost");
-					this.Onpk_costChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Sender_address", DbType="VarChar(100)")]
-		public string pk_Sender_address
-		{
-			get
-			{
-				return this._pk_Sender_address;
-			}
-			set
-			{
-				if ((this._pk_Sender_address != value))
-				{
-					this.Onpk_Sender_addressChanging(value);
-					this.SendPropertyChanging();
-					this._pk_Sender_address = value;
-					this.SendPropertyChanged("pk_Sender_address");
-					this.Onpk_Sender_addressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Receiver_address", DbType="VarChar(100)")]
-		public string pk_Receiver_address
-		{
-			get
-			{
-				return this._pk_Receiver_address;
-			}
-			set
-			{
-				if ((this._pk_Receiver_address != value))
-				{
-					this.Onpk_Receiver_addressChanging(value);
-					this.SendPropertyChanging();
-					this._pk_Receiver_address = value;
-					this.SendPropertyChanged("pk_Receiver_address");
-					this.Onpk_Receiver_addressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_package_type", DbType="VarChar(30)")]
-		public string pk_package_type
-		{
-			get
-			{
-				return this._pk_package_type;
-			}
-			set
-			{
-				if ((this._pk_package_type != value))
-				{
-					this.Onpk_package_typeChanging(value);
-					this.SendPropertyChanging();
-					this._pk_package_type = value;
-					this.SendPropertyChanged("pk_package_type");
-					this.Onpk_package_typeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Employee_id", DbType="VarChar(8)")]
-		public string pk_Employee_id
-		{
-			get
-			{
-				return this._pk_Employee_id;
-			}
-			set
-			{
-				if ((this._pk_Employee_id != value))
-				{
-					this.Onpk_Employee_idChanging(value);
-					this.SendPropertyChanging();
-					this._pk_Employee_id = value;
-					this.SendPropertyChanged("pk_Employee_id");
-					this.Onpk_Employee_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Customer_id", DbType="Int")]
-		public System.Nullable<int> pk_Customer_id
-		{
-			get
-			{
-				return this._pk_Customer_id;
-			}
-			set
-			{
-				if ((this._pk_Customer_id != value))
-				{
-					if (this._Cts_User_Master.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onpk_Customer_idChanging(value);
-					this.SendPropertyChanging();
-					this._pk_Customer_id = value;
-					this.SendPropertyChanged("pk_Customer_id");
-					this.Onpk_Customer_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Current_location", DbType="VarChar(100)")]
-		public string pk_Current_location
-		{
-			get
-			{
-				return this._pk_Current_location;
-			}
-			set
-			{
-				if ((this._pk_Current_location != value))
-				{
-					this.Onpk_Current_locationChanging(value);
-					this.SendPropertyChanging();
-					this._pk_Current_location = value;
-					this.SendPropertyChanged("pk_Current_location");
-					this.Onpk_Current_locationChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Package_Status", DbType="VarChar(50)")]
-		public string pk_Package_Status
-		{
-			get
-			{
-				return this._pk_Package_Status;
-			}
-			set
-			{
-				if ((this._pk_Package_Status != value))
-				{
-					this.Onpk_Package_StatusChanging(value);
-					this.SendPropertyChanging();
-					this._pk_Package_Status = value;
-					this.SendPropertyChanged("pk_Package_Status");
-					this.Onpk_Package_StatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_isActive", DbType="Bit")]
-		public System.Nullable<bool> pk_isActive
-		{
-			get
-			{
-				return this._pk_isActive;
-			}
-			set
-			{
-				if ((this._pk_isActive != value))
-				{
-					this.Onpk_isActiveChanging(value);
-					this.SendPropertyChanging();
-					this._pk_isActive = value;
-					this.SendPropertyChanged("pk_isActive");
-					this.Onpk_isActiveChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cts_User_Master_Cts_Package", Storage="_Cts_User_Master", ThisKey="pk_Customer_id", OtherKey="um_id", IsForeignKey=true)]
-		public Cts_User_Master Cts_User_Master
-		{
-			get
-			{
-				return this._Cts_User_Master.Entity;
-			}
-			set
-			{
-				Cts_User_Master previousValue = this._Cts_User_Master.Entity;
-				if (((previousValue != value) 
-							|| (this._Cts_User_Master.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Cts_User_Master.Entity = null;
-						previousValue.Cts_Packages.Remove(this);
-					}
-					this._Cts_User_Master.Entity = value;
-					if ((value != null))
-					{
-						value.Cts_Packages.Add(this);
-						this._pk_Customer_id = value.um_id;
-					}
-					else
-					{
-						this._pk_Customer_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Cts_User_Master");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -1332,6 +965,397 @@ namespace DAL
 					this._bm_orders = value;
 					this.SendPropertyChanged("bm_orders");
 					this.Onbm_ordersChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cts_Package")]
+	public partial class Cts_Package : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _pk_consignment_id;
+		
+		private System.Nullable<System.DateTime> _pk_Accept_Date;
+		
+		private System.Nullable<double> _pk_Package_weight;
+		
+		private System.Nullable<double> _pk_cost;
+		
+		private string _pk_Sender_address;
+		
+		private string _pk_Receiver_address;
+		
+		private string _pk_package_type;
+		
+		private string _pk_Employee_id;
+		
+		private System.Nullable<int> _pk_Customer_id;
+		
+		private string _pk_Current_location;
+		
+		private string _pk_Package_Status;
+		
+		private System.Nullable<bool> _pk_isActive;
+		
+		private System.Nullable<System.DateTime> _pk_Add_Date;
+		
+		private EntityRef<Cts_User_Master> _Cts_User_Master;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onpk_consignment_idChanging(int value);
+    partial void Onpk_consignment_idChanged();
+    partial void Onpk_Accept_DateChanging(System.Nullable<System.DateTime> value);
+    partial void Onpk_Accept_DateChanged();
+    partial void Onpk_Package_weightChanging(System.Nullable<double> value);
+    partial void Onpk_Package_weightChanged();
+    partial void Onpk_costChanging(System.Nullable<double> value);
+    partial void Onpk_costChanged();
+    partial void Onpk_Sender_addressChanging(string value);
+    partial void Onpk_Sender_addressChanged();
+    partial void Onpk_Receiver_addressChanging(string value);
+    partial void Onpk_Receiver_addressChanged();
+    partial void Onpk_package_typeChanging(string value);
+    partial void Onpk_package_typeChanged();
+    partial void Onpk_Employee_idChanging(string value);
+    partial void Onpk_Employee_idChanged();
+    partial void Onpk_Customer_idChanging(System.Nullable<int> value);
+    partial void Onpk_Customer_idChanged();
+    partial void Onpk_Current_locationChanging(string value);
+    partial void Onpk_Current_locationChanged();
+    partial void Onpk_Package_StatusChanging(string value);
+    partial void Onpk_Package_StatusChanged();
+    partial void Onpk_isActiveChanging(System.Nullable<bool> value);
+    partial void Onpk_isActiveChanged();
+    partial void Onpk_Add_DateChanging(System.Nullable<System.DateTime> value);
+    partial void Onpk_Add_DateChanged();
+    #endregion
+		
+		public Cts_Package()
+		{
+			this._Cts_User_Master = default(EntityRef<Cts_User_Master>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_consignment_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int pk_consignment_id
+		{
+			get
+			{
+				return this._pk_consignment_id;
+			}
+			set
+			{
+				if ((this._pk_consignment_id != value))
+				{
+					this.Onpk_consignment_idChanging(value);
+					this.SendPropertyChanging();
+					this._pk_consignment_id = value;
+					this.SendPropertyChanged("pk_consignment_id");
+					this.Onpk_consignment_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Accept_Date", DbType="Date")]
+		public System.Nullable<System.DateTime> pk_Accept_Date
+		{
+			get
+			{
+				return this._pk_Accept_Date;
+			}
+			set
+			{
+				if ((this._pk_Accept_Date != value))
+				{
+					this.Onpk_Accept_DateChanging(value);
+					this.SendPropertyChanging();
+					this._pk_Accept_Date = value;
+					this.SendPropertyChanged("pk_Accept_Date");
+					this.Onpk_Accept_DateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Package_weight", DbType="Float")]
+		public System.Nullable<double> pk_Package_weight
+		{
+			get
+			{
+				return this._pk_Package_weight;
+			}
+			set
+			{
+				if ((this._pk_Package_weight != value))
+				{
+					this.Onpk_Package_weightChanging(value);
+					this.SendPropertyChanging();
+					this._pk_Package_weight = value;
+					this.SendPropertyChanged("pk_Package_weight");
+					this.Onpk_Package_weightChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_cost", DbType="Float")]
+		public System.Nullable<double> pk_cost
+		{
+			get
+			{
+				return this._pk_cost;
+			}
+			set
+			{
+				if ((this._pk_cost != value))
+				{
+					this.Onpk_costChanging(value);
+					this.SendPropertyChanging();
+					this._pk_cost = value;
+					this.SendPropertyChanged("pk_cost");
+					this.Onpk_costChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Sender_address", DbType="VarChar(100)")]
+		public string pk_Sender_address
+		{
+			get
+			{
+				return this._pk_Sender_address;
+			}
+			set
+			{
+				if ((this._pk_Sender_address != value))
+				{
+					this.Onpk_Sender_addressChanging(value);
+					this.SendPropertyChanging();
+					this._pk_Sender_address = value;
+					this.SendPropertyChanged("pk_Sender_address");
+					this.Onpk_Sender_addressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Receiver_address", DbType="VarChar(100)")]
+		public string pk_Receiver_address
+		{
+			get
+			{
+				return this._pk_Receiver_address;
+			}
+			set
+			{
+				if ((this._pk_Receiver_address != value))
+				{
+					this.Onpk_Receiver_addressChanging(value);
+					this.SendPropertyChanging();
+					this._pk_Receiver_address = value;
+					this.SendPropertyChanged("pk_Receiver_address");
+					this.Onpk_Receiver_addressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_package_type", DbType="VarChar(30)")]
+		public string pk_package_type
+		{
+			get
+			{
+				return this._pk_package_type;
+			}
+			set
+			{
+				if ((this._pk_package_type != value))
+				{
+					this.Onpk_package_typeChanging(value);
+					this.SendPropertyChanging();
+					this._pk_package_type = value;
+					this.SendPropertyChanged("pk_package_type");
+					this.Onpk_package_typeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Employee_id", DbType="VarChar(8)")]
+		public string pk_Employee_id
+		{
+			get
+			{
+				return this._pk_Employee_id;
+			}
+			set
+			{
+				if ((this._pk_Employee_id != value))
+				{
+					this.Onpk_Employee_idChanging(value);
+					this.SendPropertyChanging();
+					this._pk_Employee_id = value;
+					this.SendPropertyChanged("pk_Employee_id");
+					this.Onpk_Employee_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Customer_id", DbType="Int")]
+		public System.Nullable<int> pk_Customer_id
+		{
+			get
+			{
+				return this._pk_Customer_id;
+			}
+			set
+			{
+				if ((this._pk_Customer_id != value))
+				{
+					if (this._Cts_User_Master.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onpk_Customer_idChanging(value);
+					this.SendPropertyChanging();
+					this._pk_Customer_id = value;
+					this.SendPropertyChanged("pk_Customer_id");
+					this.Onpk_Customer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Current_location", DbType="VarChar(100)")]
+		public string pk_Current_location
+		{
+			get
+			{
+				return this._pk_Current_location;
+			}
+			set
+			{
+				if ((this._pk_Current_location != value))
+				{
+					this.Onpk_Current_locationChanging(value);
+					this.SendPropertyChanging();
+					this._pk_Current_location = value;
+					this.SendPropertyChanged("pk_Current_location");
+					this.Onpk_Current_locationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Package_Status", DbType="VarChar(50)")]
+		public string pk_Package_Status
+		{
+			get
+			{
+				return this._pk_Package_Status;
+			}
+			set
+			{
+				if ((this._pk_Package_Status != value))
+				{
+					this.Onpk_Package_StatusChanging(value);
+					this.SendPropertyChanging();
+					this._pk_Package_Status = value;
+					this.SendPropertyChanged("pk_Package_Status");
+					this.Onpk_Package_StatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_isActive", DbType="Bit")]
+		public System.Nullable<bool> pk_isActive
+		{
+			get
+			{
+				return this._pk_isActive;
+			}
+			set
+			{
+				if ((this._pk_isActive != value))
+				{
+					this.Onpk_isActiveChanging(value);
+					this.SendPropertyChanging();
+					this._pk_isActive = value;
+					this.SendPropertyChanged("pk_isActive");
+					this.Onpk_isActiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_Add_Date", DbType="Date")]
+		public System.Nullable<System.DateTime> pk_Add_Date
+		{
+			get
+			{
+				return this._pk_Add_Date;
+			}
+			set
+			{
+				if ((this._pk_Add_Date != value))
+				{
+					this.Onpk_Add_DateChanging(value);
+					this.SendPropertyChanging();
+					this._pk_Add_Date = value;
+					this.SendPropertyChanged("pk_Add_Date");
+					this.Onpk_Add_DateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cts_User_Master_Cts_Package", Storage="_Cts_User_Master", ThisKey="pk_Customer_id", OtherKey="um_id", IsForeignKey=true)]
+		public Cts_User_Master Cts_User_Master
+		{
+			get
+			{
+				return this._Cts_User_Master.Entity;
+			}
+			set
+			{
+				Cts_User_Master previousValue = this._Cts_User_Master.Entity;
+				if (((previousValue != value) 
+							|| (this._Cts_User_Master.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Cts_User_Master.Entity = null;
+						previousValue.Cts_Packages.Remove(this);
+					}
+					this._Cts_User_Master.Entity = value;
+					if ((value != null))
+					{
+						value.Cts_Packages.Add(this);
+						this._pk_Customer_id = value.um_id;
+					}
+					else
+					{
+						this._pk_Customer_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Cts_User_Master");
 				}
 			}
 		}

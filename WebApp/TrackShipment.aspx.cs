@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebApp
 {
-    public partial class TrackShipment : System.Web.UI.Page
+    public partial class TrackShipment : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

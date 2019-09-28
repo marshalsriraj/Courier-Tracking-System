@@ -2,8 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container" style="margin-top: 5% !important;">
-        <asp:GridView runat="server" ID="gdvApprovalData" class="table table-responsive" AutoGenerateColumns="false"
-            OnRowCommand="gdvApprovalData_RowCommand" OnRowDataBound="GridView1_RowDataBound">
+        <asp:GridView runat="server" ID="gdvApprovalData" class="table table-responsive" AutoGenerateColumns="false">
 
             <Columns>
                 <asp:TemplateField HeaderText="Consignment ID">
@@ -36,18 +35,17 @@
 
                 <asp:TemplateField HeaderText="Cost">
                     <ItemTemplate>
-                        <asp:TextBox runat="server" ID="txtPkCost"></asp:TextBox>
+                        <asp:Label runat="server" ID="lblPkCost" Text='<%#Eval("pk_cost")%>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="Current location">
                     <ItemTemplate>
-                        <asp:DropDownList ID="ddlLocation" runat="server">
-                        </asp:DropDownList>
+                        <asp:Label runat="server" ID="lblLocation" Text='<%#Eval("pk_Current_location")%>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderText="Status" Visible="false">
+<%--                <asp:TemplateField HeaderText="Status" Visible="false">
                     <ItemTemplate>
                         <asp:DropDownList ID="ddlStatus" runat="server">
                             <asp:ListItem Value="Rejected" Text="Rejected"></asp:ListItem>
@@ -56,10 +54,8 @@
                             <asp:ListItem Value="Delivered" Text="Delivered"></asp:ListItem>
                         </asp:DropDownList>
                     </ItemTemplate>
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
 
-                <asp:ButtonField HeaderText="Approve" ButtonType="Image" ImageUrl="Images/ok.png" CommandName="approve" />
-                <asp:ButtonField HeaderText="Reject" ButtonType="Image" ImageUrl="Images/delete.png" CommandName="reject" />
             </Columns>
         </asp:GridView>        
     </div>

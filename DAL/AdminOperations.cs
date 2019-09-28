@@ -18,7 +18,7 @@ namespace DAL
                 }
                 else if (roleId == 2)
                 {
-                    return db.Cts_User_Masters.Where(x => x.um_isActive == null && x.um_RoleId == 3 && x.um_RoleId == 4).ToList();
+                    return db.Cts_User_Masters.Where(x => x.um_isActive == null && x.um_RoleId == 3 || x.um_RoleId == 4).ToList();
                 }
                 else
                 {
@@ -82,7 +82,6 @@ namespace DAL
                 }
             }
         }
-
 
         public static List<Cts_Package> GetAllPackageDetails()
         {
