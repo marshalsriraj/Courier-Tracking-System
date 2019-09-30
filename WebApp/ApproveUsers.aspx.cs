@@ -48,15 +48,13 @@ namespace WebApp
             {
                 if (BAL.AdminOperations.ApprovalUsers(um_Id, false, empId, name, salary))
                 {
-                    string _msg = string.Format("SuccessFunction('{0}')", "User Approved Successfully");
+                    string _msg = string.Format("ErrFunction('{0}')", "User Rejected");
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
-
                 }
                 else
                 {
-                    string _msg = string.Format("ErrFunction('{0}')", "User Rejected");
+                    string _msg = string.Format("SuccessFunction('{0}')", "User Approved Successfully");
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
-
                 }                
             }
             LoadData();

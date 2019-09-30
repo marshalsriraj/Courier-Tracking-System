@@ -62,16 +62,25 @@ namespace DAL
             {
                 try
                 {
-                    db.Cts_User_Masters.InsertOnSubmit(userDetails);
-                    db.SubmitChanges();
-                    if (userDetails.um_id > 0)
-                    {
-                        return true;
-                    }
+                    var check = db.Cts_User_Masters.Where(x => x.um_userId == userDetails.um_userId).ToList();
+                    if (check.Count == 0)
+                        {
+                            db.Cts_User_Masters.InsertOnSubmit(userDetails);
+                            db.SubmitChanges();
+                            if (userDetails.um_id > 0)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
                     else
                     {
                         return false;
                     }
+                    
                 }
                 catch (Exception ex)
                 {

@@ -25,7 +25,7 @@ namespace WebApp
                     pk_Accept_Date = DateTime.Now.Date,
                     pk_Package_weight = double.Parse(txtPackageWeight.Text),
                     pk_Sender_address = txtSenderAddress.Text + ", " + ddlSendCity.Text,
-                    pk_Receiver_address = txtReceiverAddress.Text + ddlReceiveCity.Text,
+                    pk_Receiver_address = txtReceiverAddress.Text + ", " + ddlReceiveCity.Text,
                     pk_package_type = ddlPackageType.SelectedItem.Text,
                     pk_Customer_id = int.Parse(Session["umId"].ToString())
                 };
@@ -33,17 +33,18 @@ namespace WebApp
                 {
                     string _msg = string.Format("SuccessFunction('{0}')", "Package Added Successfully");
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
+                    txtSenderAddress.Text = txtReceiverAddress.Text = "";
                 }
                 else
                 {
                     string _msg = string.Format("ErrFunction('{0}')", "Package Cannot Be Added ");
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
+                    txtSenderAddress.Text = txtReceiverAddress.Text = "";
                 }
             }
             catch (Exception ex)
             {
-                //string _msg = string.Format("ErrFunction('{0}')", "Fill the required fields!");
-                //Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
+
             }
         }
 

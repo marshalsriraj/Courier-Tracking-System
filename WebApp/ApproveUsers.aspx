@@ -41,7 +41,7 @@
 
                 <asp:TemplateField HeaderText="Salary">
                     <ItemTemplate>
-                        <asp:TextBox runat="server" ID="txtSalary"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtSalary" ClientIDMode="Static" TextMode="Number" Text=0></asp:TextBox>
                     </ItemTemplate>
                 </asp:TemplateField>
 

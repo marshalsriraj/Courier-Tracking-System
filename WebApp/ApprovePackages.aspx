@@ -45,17 +45,6 @@
                     </ItemTemplate>
                 </asp:TemplateField>
 
-<%--                <asp:TemplateField HeaderText="Status" Visible="false">
-                    <ItemTemplate>
-                        <asp:DropDownList ID="ddlStatus" runat="server">
-                            <asp:ListItem Value="Rejected" Text="Rejected"></asp:ListItem>
-                            <asp:ListItem Value="Booked" Text="Booked"></asp:ListItem>
-                            <asp:ListItem Value="In Transit" Text="In Transit"></asp:ListItem>
-                            <asp:ListItem Value="Delivered" Text="Delivered"></asp:ListItem>
-                        </asp:DropDownList>
-                    </ItemTemplate>
-                </asp:TemplateField>--%>
-
             </Columns>
         </asp:GridView>        
     </div>

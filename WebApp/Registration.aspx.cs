@@ -37,11 +37,13 @@ namespace WebApp
             {
                 string _msg = string.Format("SuccessFunction('{0}')", "Your Account is Registered Successfully !");
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
+                txtUserFirstName.Text = txtUserLastName.Text = txtUserEmail.Text = txtUserContactNumber.Text = txtUserId.Text = txtDesigation.Text = txtPerAddress.Text = txtCorAddress.Text = "";
             }
             else
             {
                 string _msg = string.Format("ErrFunction('{0}')", "Not Registered!");
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
+                txtUserFirstName.Text = txtUserLastName.Text = txtUserEmail.Text = txtUserContactNumber.Text = txtUserId.Text = txtDesigation.Text = txtPerAddress.Text = txtCorAddress.Text = "";
             }
         }
     }

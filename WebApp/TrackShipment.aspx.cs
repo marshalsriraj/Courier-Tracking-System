@@ -35,7 +35,8 @@ namespace WebApp
                         gdvData.DataBind();
                     }
                 }
-            }catch
+            }
+            catch (Exception ex)
             {
 
             }

@@ -12,11 +12,13 @@
                         <asp:Label runat="server" ID="lblcnsngId" Text='<%#Eval("pk_consignment_id") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
+
                 <asp:TemplateField HeaderText="Weight">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblpkWeight" Text='<%#Eval("pk_Package_weight") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
+
                 <asp:TemplateField HeaderText="Sender City">
                     <ItemTemplate>
                         <asp:Label runat="server" ID="lblSendAddress" Text='<%#Eval("pk_Sender_address") %>'></asp:Label>
@@ -43,7 +45,13 @@
 
                 <asp:TemplateField HeaderText="Current location">
                     <ItemTemplate>
-                        <asp:DropDownList ID="ddlLocation" runat="server" CssClass="form-control" SelectedValue='<%# Eval("pk_Current_location") %>'>
+                        <asp:Label runat="server" ID="lblLocation" Text='<%#Eval("pk_Current_location")%>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+                <asp:TemplateField HeaderText="Update Current location">
+                    <ItemTemplate>
+                        <asp:DropDownList ID="ddlLocation" runat="server" CssClass="form-control" >
                         </asp:DropDownList>
                     </ItemTemplate>
                 </asp:TemplateField>
