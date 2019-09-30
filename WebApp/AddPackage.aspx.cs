@@ -27,7 +27,10 @@ namespace WebApp
                     pk_Sender_address = txtSenderAddress.Text + ", " + ddlSendCity.Text,
                     pk_Receiver_address = txtReceiverAddress.Text + ", " + ddlReceiveCity.Text,
                     pk_package_type = ddlPackageType.SelectedItem.Text,
-                    pk_Customer_id = int.Parse(Session["umId"].ToString())
+                    pk_Customer_id = int.Parse(Session["umId"].ToString()),
+                    pk_Current_location = "Not Updated",
+                    pk_Package_Status = "Pending",
+                    pk_Add_Date = DateTime.Now.Date
                 };
                 if (BAL.UserOperations.AddPackage(_package))
                 {

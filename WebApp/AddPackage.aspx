@@ -23,7 +23,7 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="ddlPackageType">Package Type</label>
-                <asp:DropDownList runat="server" ID="ddlPackageType" class="form-control" ClientIDMode="Static" 
+                <asp:DropDownList runat="server" ID="ddlPackageType" class="form-control" ClientIDMode="Static"
                     OnSelectedIndexChanged="ddlPackageType_SelectedIndexChanged" AutoPostBack="True">
                     <asp:ListItem Value="0" Text="--Select--"></asp:ListItem>
                     <asp:ListItem Value="1" Text="Standard courier services"></asp:ListItem>
@@ -41,7 +41,7 @@
             <asp:TextBox runat="server" ID="txtSenderAddress" class="form-control" placeholder="Sender Address" TextMode="MultiLine"
                 ClientIDMode="Static">
             </asp:TextBox>
-        </div>        
+        </div>
 
         <div class="form-group col-md-6">
             <label for="txtReceiverAddress">Receiver Address</label>
@@ -82,7 +82,7 @@
                 <asp:ListItem Text="Pune" Value="Pune"></asp:ListItem>
                 <asp:ListItem Text="Delhi" Value="Delhi"></asp:ListItem>
             </asp:DropDownList>
-        </div>        
+        </div>
 
         <asp:Button runat="server" ID="btnSubmit" Text="Submit" class="btn btn-primary" ClientIDMode="Static" OnClientClick="return packageValidate();" OnClick="btnSubmit_Click" />
     </div>

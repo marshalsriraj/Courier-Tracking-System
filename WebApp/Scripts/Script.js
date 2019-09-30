@@ -12,13 +12,8 @@
     var valuserid = /^[A-Za-z0-9]*$/;
     var userPwd = document.getElementById("txtUserPassword").value;
     var userCpwd = document.getElementById("txtUserCPassword").value;
-    
-
-    //if (userFname == '' && userLname == '' && userEmail == '' && userContact == '' && userUserid == '' && userPwd == '') {
-    //    document.getElementById("txtUserFirstName").focus();
-    //    alert("Enter all the highlighted fields!");
-    //    return false;
-    //}
+    //var g = document.getElementById("ddlGender");
+    //var gender = s.options[g.selectedIndex].value;
 
     if (userFname == '' || userFname == null) {
         document.getElementById("txtUserFirstName").focus();

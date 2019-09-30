@@ -99,7 +99,7 @@
                                 <div class="form-group row">
                                     <label for="txtUserFirstName" class="col-md-4 col-form-label text-md-right">First Name</label>
                                     <div class="col-md-6">
-                                        <asp:TextBox ID="txtUserFirstName" runat="server" CssClass="form-control" placeholder="First Name *" 
+                                        <asp:TextBox ID="txtUserFirstName" runat="server" CssClass="form-control" placeholder="First Name *"
                                             ClientIDMode="Static"></asp:TextBox>
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@
                                 <div class="form-group row">
                                     <label for="txtUserEmail" class="col-md-4 col-form-label text-md-right">Email Id</label>
                                     <div class="col-md-6">
-                                        <asp:TextBox ID="txtUserEmail" runat="server" CssClass="form-control" placeholder="Email Id *" 
+                                        <asp:TextBox ID="txtUserEmail" runat="server" CssClass="form-control" placeholder="Email Id *"
                                             ClientIDMode="Static" TextMode="Email"></asp:TextBox>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
                                 <div class="form-group row">
                                     <label for="txtUserContactNumber" class="col-md-4 col-form-label text-md-right">Contact Number</label>
                                     <div class="col-md-6">
-                                        <asp:TextBox ID="txtUserContactNumber" runat="server" CssClass="form-control" TextMode="Phone" 
+                                        <asp:TextBox ID="txtUserContactNumber" runat="server" CssClass="form-control" TextMode="Phone"
                                             placeholder="Contact Number *" ClientIDMode="Static"></asp:TextBox>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@
                                 <div class="form-group row">
                                     <label for="txtUserPassword" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
-                                        <asp:TextBox ID="txtUserPassword" runat="server" CssClass="form-control" placeholder="Password *" 
+                                        <asp:TextBox ID="txtUserPassword" runat="server" CssClass="form-control" placeholder="Password *"
                                             TextMode="Password" ClientIDMode="Static"></asp:TextBox>
                                     </div>
                                 </div>
@@ -175,7 +175,7 @@
                                     </div>
                                 </div>
 
-                                
+
                                 <div id="Employee" style="display: none;">
                                     <div class="form-group row">
                                         <label for="txtDesigation" class="col-md-4 col-form-label text-md-right">Designation</label>
@@ -203,7 +203,7 @@
                                 </div>
 
                                 <div class="col-md-6 offset-md-4">
-                                    <asp:Button runat="server" ID="btnLogin" Text="Register" ClientIDMode="Static" 
+                                    <asp:Button runat="server" ID="btnLogin" Text="Register" ClientIDMode="Static"
                                         class="btn btn-primary" OnClick="btnLogin_Click" OnClientClick="return validate()" />
                                     <div>
                                         <a class="small" href="ForgetPassword.aspx">Forgot Password?</a>
@@ -211,7 +211,7 @@
                                     <div>
                                         <a class="small" href="Login.aspx">Already have an account? Login!</a>
                                     </div>
-                                </div>                                
+                                </div>
 
                             </form>
                         </div>

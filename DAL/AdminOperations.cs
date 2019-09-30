@@ -49,6 +49,14 @@ namespace DAL
             }
         }
 
+        public static List<Cts_Package> UserPackageStatus()
+        {
+            using (DBContextDataContext db = new DBContextDataContext())
+            {
+                return db.Cts_Packages.Where(x => x.pk_isActive == null).ToList();
+            }
+        }
+
         public static List<Cts_Package> PackageStatus()
         {
             using (DBContextDataContext db = new DBContextDataContext())

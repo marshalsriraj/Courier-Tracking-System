@@ -29,6 +29,11 @@ namespace BAL
             return DAL.AdminOperations.PackageStatus();
         }
 
+        public static List<Cts_Package> UserPackageStatus()
+        {
+            return DAL.AdminOperations.UserPackageStatus();
+        }
+
         public static bool ApprovePackage(int pk_id, bool status, int role, string empId, int cost, string location)
         {
             return DAL.UserFunctions.ApprovePackage(pk_id, status, role, empId, cost, location);

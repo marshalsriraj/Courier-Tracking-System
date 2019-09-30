@@ -59,13 +59,14 @@
                 <asp:TemplateField HeaderText="Status">
                     <ItemTemplate>
                         <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-control" SelectedValue='<%# Eval("pk_Package_Status") %>' >
+                            <asp:ListItem Value="Pending" Text="Pending"></asp:ListItem>
                             <asp:ListItem Value="Rejected" Text="Rejected"></asp:ListItem>
                             <asp:ListItem Value="Booked" Text="Booked"></asp:ListItem>
                             <asp:ListItem Value="In Transit" Text="In Transit"></asp:ListItem>
                             <asp:ListItem Value="Delivered" Text="Delivered"></asp:ListItem>
                         </asp:DropDownList>
                     </ItemTemplate>
-                </asp:TemplateField>                
+                </asp:TemplateField>
                                 
                 <asp:ButtonField HeaderText="Approve" ButtonType="Image" ImageUrl="Images/ok.png" CommandName="approve"/>
                 <asp:ButtonField HeaderText="Reject" ButtonType="Image" ImageUrl="Images/delete.png" CommandName="reject"/>

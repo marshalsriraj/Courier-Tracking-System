@@ -17,9 +17,16 @@ namespace WebApp
 
         public void LoadData()
         {
-            List<Cts_Package> package = BAL.UserOperations.PackageStatus();
-            gdvApprovalData.DataSource = package;
-            gdvApprovalData.DataBind();
+            try
+            {
+                List<Cts_Package> package = BAL.UserOperations.UserPackageStatus();
+                gdvApprovalData.DataSource = package;
+                gdvApprovalData.DataBind();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         protected void gdvApprovalData_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -40,6 +47,11 @@ namespace WebApp
                     string _msg = string.Format("SuccessFunction('{0}')", "Package Rejected");
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
                 }
+            }
+            else
+            {
+                string _msg = string.Format("ErrFunction('{0}')", "Package Rejected");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", _msg, true);
             }
             LoadData();
         }

@@ -37,7 +37,6 @@ namespace DAL
                         {
                             row.um_firstName = update.um_firstName;
                             row.um_lastName = update.um_lastName;
-                            row.um_password = update.um_password;
                             row.um_contact = update.um_contact;
                             row.um_PerAddress = update.um_PerAddress;
                             row.um_CorAddress = update.um_CorAddress;
